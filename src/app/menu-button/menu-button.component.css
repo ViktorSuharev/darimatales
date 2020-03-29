@@ -1,0 +1,6 @@
+.rounded-button {
+  border-radius: 10px;
+  color: white;
+  white-space: nowrap;
+  background-color: rgba(255, 255, 255, 0.2);
+}
