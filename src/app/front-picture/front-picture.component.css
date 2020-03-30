@@ -1,4 +1,4 @@
-.center-pic-title {
+.picture-title {
   position: absolute;
   padding-top: 5%;
   padding-left: 18%;
@@ -9,7 +9,7 @@
   font-weight: bold;
 }
 
-.center-pic-btn {
+.picture-btn {
   background-image: url('~/assets/center-pic-1.jpg');
   background-repeat: no-repeat;
   background-color: transparent;
@@ -20,10 +20,8 @@
   cursor: pointer;
 }
 
-.btn {
-  width: 55%;
-  height: 63%;
+.front-button-container {
+  width: 70%;
+  height: 80%;
   position: absolute;
-  left: 14%;
-  top: 18%;
 }

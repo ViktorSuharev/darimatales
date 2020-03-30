@@ -5,13 +5,15 @@
 
 .front-right-column {
   width: 20%;
+  height: 100%;
   float: right;
 }
 
-.front-picture {
-  width: 55%;
-  height: 63%;
-  position: absolute;
-  left: 14%;
-  top: 18%;
+.left-container {
+  padding: 5%;
+}
+
+.right-container {
+  height: 100%;
+  padding: 10px;
 }

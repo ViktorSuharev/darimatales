@@ -1,13 +1,16 @@
 <div style="height: 100%">
   <div class="front-left-column">
-    <div class="front-picture">
+    <div class="left-container">
       <app-front-picture></app-front-picture>
     </div>
   </div>
 
   <div class="front-right-column">
-    <div>
-      some another content
+    <div class="right-container">
+      <app-front-widget
+        [first]="'01'"
+        [last]="'02'"
+      ></app-front-widget>
     </div>
   </div>
 </div>
