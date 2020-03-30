@@ -1,0 +1,17 @@
+.front-left-column {
+  width: 80%;
+  float: left;
+}
+
+.front-right-column {
+  width: 20%;
+  float: right;
+}
+
+.front-picture {
+  width: 55%;
+  height: 63%;
+  position: absolute;
+  left: 14%;
+  top: 18%;
+}

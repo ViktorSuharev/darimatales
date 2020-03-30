@@ -1,0 +1,35 @@
+.menu-header {
+  width: 100%;
+  display: table;
+  margin-left: 1%;
+  padding-top: 1%;
+}
+
+.menu-header-btn-template {
+  float: left;
+  width: 80px;
+}
+
+.menu-header-tales-list-template {
+  float: left;
+  width: 10%;
+  position: relative;
+  top: 50%;
+}
+
+.menu-header-gallery-template {
+  float: left;
+  width: 10%;
+  position: relative;
+  top: 50%;
+}
+
+.menu-btn-icon {
+  background-image: url('~/assets/menu.svg');
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
