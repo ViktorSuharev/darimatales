@@ -7,4 +7,14 @@ import {Component, Input} from '@angular/core';
 })
 export class MenuButtonComponent {
   @Input() title: string;
+
+  isNavigated = false;
+
+  onNavigateMouseOnButton(event: MouseEvent): void {
+    this.isNavigated = true;
+  }
+
+  onNavigateMouseOutButton(event: MouseEvent): void {
+    this.isNavigated = false;
+  }
 }

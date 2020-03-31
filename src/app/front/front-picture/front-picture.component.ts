@@ -6,13 +6,13 @@ import {Component} from '@angular/core';
   styleUrls: ['./front-picture.component.css']
 })
 export class FrontPictureComponent {
-  isFullMode = false;
+  isNavigated = false;
 
   onNavigateMouseOnButton(event: MouseEvent): void {
-    this.isFullMode = true;
+    this.isNavigated = true;
   }
 
   onNavigateMouseOutButton(event: MouseEvent): void {
-    this.isFullMode = false;
+    this.isNavigated = false;
   }
 }

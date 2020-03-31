@@ -1,1 +1,4 @@
-<button class="rounded-button"><b>{{title}}</b></button>
+<button class="rounded-button" [ngClass]="isNavigated ? 'navigated' : ''"
+  (mouseenter)="onNavigateMouseOnButton($event)"
+  (mouseleave)="onNavigateMouseOutButton($event)"
+><b>{{title}}</b></button>
