@@ -12,16 +12,18 @@
 .picture-btn {
   background-image: url('~/assets/center-pic-1.jpg');
   background-repeat: no-repeat;
-  background-color: transparent;
+  background-position: center;
   background-size: cover;
   width: 100%;
   height: 100%;
   border: none;
   cursor: pointer;
+  position: relative;
 }
 
 .front-button-container {
-  width: 70%;
+  width: 75%;
   height: 80%;
   position: absolute;
+  padding: 5%;
 }
