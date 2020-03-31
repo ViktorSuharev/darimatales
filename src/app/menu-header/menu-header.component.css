@@ -10,18 +10,11 @@
   width: 80px;
 }
 
-.menu-header-tales-list-template {
+.menu-header-item {
   float: left;
-  width: 10%;
   position: relative;
-  top: 50%;
-}
-
-.menu-header-gallery-template {
-  float: left;
-  width: 10%;
-  position: relative;
-  top: 50%;
+  margin-right: 40px;
+  margin-top: 10px;
 }
 
 .menu-btn-icon {

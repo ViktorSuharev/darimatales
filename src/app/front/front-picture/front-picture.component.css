@@ -21,9 +21,15 @@
   position: relative;
 }
 
-.front-button-container {
+.normal-front-button-container {
+  position: absolute;
   width: 75%;
   height: 80%;
-  position: absolute;
   padding: 5%;
+}
+
+.full-front-button-container {
+  position: absolute;
+  width: 80%;
+  height: 100%;
 }
