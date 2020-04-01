@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MenuButtonComponent } from './menu-header/menu-button/menu-button.component';
-import { FrontComponent } from './front/front.component';
+import { FrontComponent } from './body/front.component';
 import {MenuHeaderComponent} from './menu-header/menu-header.component';
-import {FrontPictureComponent} from './front/front-picture/front-picture.component';
-import {FrontWidgetComponent} from './front/front-widget/front-widget.component';
-import {ProgressBarComponent} from './front/front-widget/progress-bar/progress-bar.component';
+import {FrontPictureComponent} from './body/front-picture/front-picture.component';
+import {FrontWidgetComponent} from './body/front-widget/front-widget.component';
+import {ProgressBarComponent} from './body/front-widget/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [

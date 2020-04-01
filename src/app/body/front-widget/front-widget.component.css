@@ -10,10 +10,10 @@
 .bottom-paging-digit {
   height: calc(50% - 2px);
   color: #38241A;
-  font-size: 60px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  cursor: pointer;
 }
 
 .paging-progress-indicator {
