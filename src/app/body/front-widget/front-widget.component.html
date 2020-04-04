@@ -7,7 +7,8 @@
 </div>
 
 <div style="width: 100%; height: 80px">
-  <div class="bottom-paging-digit" [style.font-size]="isNavigated ? '80px' : '60px'"
+  <div class="bottom-paging-digit"
+       [style.font-size]="isNavigated ? '80px' : '60px'"
        (mouseenter)="onNavigateMouseOnBottomDigit($event)"
        (mouseleave)="onNavigateMouseOutBottomDigit($event)">
     {{last}}
