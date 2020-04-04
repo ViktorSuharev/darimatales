@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {GeneralStyleService} from './general-style.service';
+import {GeneralStyleService} from './service/general-style.service';
 
 @Component({
   selector: 'app-root',

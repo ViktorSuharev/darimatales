@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {GeneralStyleService} from '../../general-style.service';
+import {GeneralStyleService} from '../../service/general-style.service';
 
 @Component({
   selector: 'app-front-widget',
@@ -11,17 +11,21 @@ export class FrontWidgetComponent {
   @Input() last: string;
 
   isNavigated = false;
+  isClicked = false;
 
   constructor(private generalStyleService: GeneralStyleService) {
   }
 
   onNavigateMouseOnBottomDigit(event: MouseEvent): void {
     this.isNavigated = true;
-    this.generalStyleService.setLight();
   }
 
   onNavigateMouseOutBottomDigit(event: MouseEvent): void {
     this.isNavigated = false;
-    this.generalStyleService.setDefault();
+  }
+
+  onClickBottomDigit(): void {
+    this.isClicked = true;
+    this.generalStyleService.setLight();
   }
 }
