@@ -8,17 +8,12 @@
 
 <div style="width: 100%; height: 80px">
   <div class="bottom-paging-digit" title="Перейти к историям"
-       [style.font-size]="isNavigated || isClicked ? '80px' : '60px'"
+       [style.font-size]="isNavigated || (this.pictureGalleryService.visible | async) ? '80px' : '60px'"
        (mouseenter)="onNavigateMouseOnBottomDigit($event)"
        (mouseleave)="onNavigateMouseOutBottomDigit($event)"
-       (click)="onClickBottomDigit()">
+       (click)="onClickBottomDigit($event)">
     {{last}}
   </div>
 </div>
 
-<div *ngIf="isClicked" style="position: absolute; top: 50%; left: 10%; width: 100%; height: 100%;">
-  <app-pic-item></app-pic-item>
-  <app-pic-item></app-pic-item>
-  <app-pic-item></app-pic-item>
-  <app-pic-item></app-pic-item>
-</div>
+<app-pic-galery [isVisible]="this.pictureGalleryService.visible | async"></app-pic-galery>

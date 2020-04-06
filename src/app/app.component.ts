@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {GeneralStyleService} from './service/general-style.service';
+import {GeneralStyleService} from './services/general-style.service';
+import {PicGalleryService} from './services/pic-gallery.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,18 @@ import {GeneralStyleService} from './service/general-style.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'darimatales';
+  constructor(
+    public generalStyleService: GeneralStyleService,
+    public picGalleryService: PicGalleryService) {
+  }
 
-  constructor(public generalStyleService: GeneralStyleService) {
+  setDefaultView(): void {
+    if (!this.generalStyleService.isDefault()) {
+      this.generalStyleService.setDefault();
+    }
+
+    if (this.picGalleryService.visible.getValue()) {
+      this.picGalleryService.hide();
+    }
   }
 }

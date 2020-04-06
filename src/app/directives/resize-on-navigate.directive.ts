@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostBinding, HostListener, Renderer2} from '@angular/core';
+import {Directive, HostBinding, HostListener} from '@angular/core';
 
 interface Rectangular {
   width: string;
@@ -21,7 +21,7 @@ export class ResizeOnNavigateDirective {
   @HostBinding('style.width') elWidth = null;
   @HostBinding('style.height') elHeight = null;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {
+  constructor() {
     this.setRectangular(ResizeOnNavigateDirective.DEFAULT_SIZE);
   }
 
