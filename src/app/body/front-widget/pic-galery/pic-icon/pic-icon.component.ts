@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-pic-item',
   templateUrl: './pic-icon.component.html',
   styleUrls: ['./pic-icon.component.css']
 })
-export class PicIconComponent implements OnInit {
+export class PicIconComponent {
 
-  constructor() { }
-
-  ngOnInit() {
+  onPictureItemClick(e: MouseEvent): void {
+    // implement navigation to page
+    e.stopPropagation();
   }
-
 }

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {PicGalleryService} from '../../services/pic-gallery.service';
+import {GeneralStyleService} from '../../services/general-style.service';
 
 @Component({
   selector: 'app-front-picture',
@@ -9,7 +10,8 @@ import {PicGalleryService} from '../../services/pic-gallery.service';
 export class FrontPictureComponent {
   isNavigated = false;
 
-  constructor(private pictureGalleryService: PicGalleryService) {
+  constructor(public generalStyleService: GeneralStyleService,
+              private pictureGalleryService: PicGalleryService) {
   }
 
   onNavigateMouseOnButton(event: MouseEvent): void {
