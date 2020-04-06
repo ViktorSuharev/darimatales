@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostListener, Renderer2} from '@angular/core';
+import {Directive, ElementRef, HostBinding, HostListener, Renderer2} from '@angular/core';
 
 interface Rectangular {
   width: string;
@@ -18,18 +18,23 @@ export class ResizeOnNavigateDirective {
     height: '100px'
   };
 
+  @HostBinding('style.width') elWidth = null;
+  @HostBinding('style.height') elHeight = null;
+
   constructor(private el: ElementRef, private renderer: Renderer2) {
-    this.renderer.setStyle(this.el.nativeElement, 'width', ResizeOnNavigateDirective.DEFAULT_SIZE.width);
-    this.renderer.setStyle(this.el.nativeElement, 'height', ResizeOnNavigateDirective.DEFAULT_SIZE.height);
+    this.setRectangular(ResizeOnNavigateDirective.DEFAULT_SIZE);
   }
 
   @HostListener('mouseenter') onEnter() {
-    this.renderer.setStyle(this.el.nativeElement, 'width', ResizeOnNavigateDirective.MAX_SIZE.width);
-    this.renderer.setStyle(this.el.nativeElement, 'height', ResizeOnNavigateDirective.MAX_SIZE.height);
+    this.setRectangular(ResizeOnNavigateDirective.MAX_SIZE);
   }
 
   @HostListener('mouseleave') onLeave() {
-    this.renderer.setStyle(this.el.nativeElement, 'width', ResizeOnNavigateDirective.DEFAULT_SIZE.width);
-    this.renderer.setStyle(this.el.nativeElement, 'height', ResizeOnNavigateDirective.DEFAULT_SIZE.height);
+    this.setRectangular(ResizeOnNavigateDirective.DEFAULT_SIZE);
+  }
+
+  private setRectangular(obj: Rectangular) {
+    this.elWidth = obj.width;
+    this.elHeight = obj.height;
   }
 }
