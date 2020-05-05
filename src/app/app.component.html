@@ -1,1 +1,11 @@
-<app-white-snake></app-white-snake>
+<!--<app-white-snake></app-white-snake>-->
+<h1>Angular Router App</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul>
+    <li><a routerLink="/white-snake" routerLinkActive="active">White Snake</a></li>
+    <li><a routerLink="/twenty-fifth" routerLinkActive="active">Twenty Fifth</a></li>
+  </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>

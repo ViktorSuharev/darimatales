@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuButtonComponent } from './menu-header/menu-button/menu-button.component';
 import { FrontComponent } from './body/front.component';
@@ -13,6 +12,7 @@ import { ResizeOnNavigateDirective } from './directives/resize-on-navigate.direc
 import { PicGalleryComponent } from './body/front-widget/pic-galery/pic-gallery.component';
 import { WhiteSnakeComponent } from './tales/white-snake/white-snake.component';
 import { TwentyFifthComponent } from './tales/twenty-fifth/twenty-fifth.component';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
