@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {GeneralStyleService} from '../../services/general-style.service';
-import {PicGalleryService} from '../../services/pic-gallery.service';
+import {GeneralStyleService} from './services/general-style.service';
+import {PicGalleryService} from './services/pic-gallery.service';
 
 @Component({
   selector: 'app-white-snake',
