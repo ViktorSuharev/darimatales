@@ -13,6 +13,7 @@ import { PicGalleryComponent } from './tales/white-snake/body/front-widget/pic-g
 import { WhiteSnakeComponent } from './tales/white-snake/white-snake.component';
 import { TwentyFifthComponent } from './tales/twenty-fifth/twenty-fifth.component';
 import { AppRoutingModule } from './app.routing.module';
+import { NamelessChildComponent } from './tales/nameless-child/nameless-child.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AppRoutingModule } from './app.routing.module';
     ResizeOnNavigateDirective,
     PicGalleryComponent,
     WhiteSnakeComponent,
-    TwentyFifthComponent
+    TwentyFifthComponent,
+    NamelessChildComponent
   ],
   imports: [
     BrowserModule,
