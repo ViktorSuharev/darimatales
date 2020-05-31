@@ -2,12 +2,9 @@
 <div class="bg-img default">
   <div class="body-center-white-frame">
     <app-menu-header></app-menu-header>
-
-    <svg height="100%" width="100%">
-      <line x1="0" y1="50%" x2="50%" y2="0" style="stroke:rgb(255,255,255);stroke-width:2" />
-      <line x1="0" y1="50%" x2="50%" y2="100%" style="stroke:rgb(255,255,255);stroke-width:2" />
-      <line x1="100%" y1="50%" x2="50%" y2="100%" style="stroke:rgb(255,255,255);stroke-width:2" />
-      <line x1="100%" y1="50%" x2="50%" y2="0" style="stroke:rgb(255,255,255);stroke-width:2" />
-    </svg>
   </div>
+
+  <div style="width: 100%; height: 100%"
+       [innerHTML]="svgImage | noSanitize"
+  ></div>
 </div>
