@@ -3,7 +3,18 @@
     <button class="menu-btn-icon" title="click here"></button>
   </div>
   <div class="menu-header-item">
-    <app-menu-button [title]="'список историй'"></app-menu-button>
+    <app-menu-button [title]="'список историй'" (click)="flipDropDown()"></app-menu-button>
+    <div *ngIf = "isDropDownOpened">
+      <div>
+        <app-menu-button style="padding-left: 10px;" [title]="'white-snake'" (click)="selectTale('white-snake')">White snake</app-menu-button>
+      </div>
+      <div>
+        <app-menu-button style="padding-left: 10px;"  [title]="'twenty-fifth'" (click)="selectTale('twenty-fifth')">Twenty fifth</app-menu-button>
+      </div>
+      <div>
+        <app-menu-button style="padding-left: 10px;"  [title]="'nameless-child'" (click)="selectTale('nameless-child')">Nameless Child</app-menu-button>
+      </div>
+    </div>
   </div>
   <div class="menu-header-item">
     <app-menu-button [title]="'галлерея'"></app-menu-button>

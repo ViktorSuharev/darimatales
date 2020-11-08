@@ -5,6 +5,7 @@ import { TwentyFifthComponent } from './tales/twenty-fifth/twenty-fifth.componen
 import {NamelessChildComponent} from './tales/nameless-child/nameless-child.component';
 
 const routes: Routes = [
+  { path: '', component: WhiteSnakeComponent },
   { path: 'white-snake', component: WhiteSnakeComponent },
   { path: 'twenty-fifth', component: TwentyFifthComponent },
   { path: 'nameless-child', component: NamelessChildComponent }

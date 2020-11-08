@@ -5,8 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './twenty-fifth.component.html',
   styleUrls: ['./twenty-fifth.component.css']
 })
-export class TwentyFifthComponent implements OnInit {
+export class TwentyFifthComponent {
   svgImage: string;
+  svgInnerImage: string;
 
   constructor() {
     const fullWidth = window.innerWidth;
@@ -28,8 +29,22 @@ export class TwentyFifthComponent implements OnInit {
       '    </svg>\n' +
       '  </div>';
 
-    console.log(this.svgImage);
+    // this.svgInnerImage = '' +
+    //   '<div style="width: 100%; height: 100%">\n' +
+    //   '  <svg style="width: 100%; height: 100%">\n' +
+    //   '  <defs>\n' +
+    //   '    <linearGradient id="three_opacity_stops">\n' +
+    //   '      <stop offset="0%" style="stop-color: #906; stop-opacity: 1.0"/>\n' +
+    //   '      <stop offset="50%" style="stop-color: #906; stop-opacity: 0.3"/>\n' +
+    //   '      <stop offset="100%" style="stop-color: #906; stop-opacity: 0.10"/>\n' +
+    //   '    </linearGradient>\n' +
+    //   '  </defs>' +
+    //   '    <rect x="' + startPointX * Math.sqrt(1.4) + '" y="' + startPointY * Math.sqrt(2) +
+    //          '" height="' + squareLength / Math.sqrt(1.5) + '" width="' + squareLength / Math.sqrt(1.5) + '"\n' +
+    //   '         style="fill: url(#three_opacity_stops);"\n' +
+    //   '         transform="rotate(45 ' + rotationPointX + ' ' + rotationPointY + ')"\n' +
+    //   '    ></rect>\n' +
+    //   '  </svg>\n' +
+    //   '</div>';
   }
-
-  ngOnInit() {}
 }
