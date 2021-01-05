@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {GeneralStyleService} from './services/general-style.service';
-import {PicGalleryService} from './services/pic-gallery.service';
+import { Component } from '@angular/core';
+import { GeneralStyleService } from './services/general-style.service';
+import { PicGalleryService } from './services/pic-gallery.service';
 
 @Component({
   selector: 'app-white-snake',
@@ -15,11 +15,11 @@ export class WhiteSnakeComponent {
 
   setDefaultView(): void {
     if (!this.generalStyleService.isDefault()) {
-      this.generalStyleService.setDefault();
+      this.generalStyleService.setDefault()
     }
 
     if (this.picGalleryService.visible.getValue()) {
-      this.picGalleryService.hide();
+      this.picGalleryService.hide()
     }
   }
 }

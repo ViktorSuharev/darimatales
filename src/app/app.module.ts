@@ -14,7 +14,7 @@ import { WhiteSnakeComponent } from './tales/white-snake/white-snake.component';
 import { TwentyFifthComponent } from './tales/twenty-fifth/twenty-fifth.component';
 import { AppRoutingModule } from './app.routing.module';
 import { NamelessChildComponent } from './tales/nameless-child/nameless-child.component';
-import {NoSanitizePipe} from './tales/twenty-fifth/no-sanitize.pipe';
+import { NoSanitizePipe } from './tales/twenty-fifth/no-sanitize.pipe';
 
 @NgModule({
   declarations: [
