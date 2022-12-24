@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "darimatales"
+    }
+  },
+  "defaultProject": "darimatales",
+  "cli": {
+    "analytics": false
+  }
 }
