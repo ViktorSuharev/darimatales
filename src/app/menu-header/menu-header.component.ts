@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-header.component.css']
 })
 export class MenuHeaderComponent {
-  isDropDownOpened: boolean = false;
+  isDropDownOpened = false;
 
   constructor(private route: Router) {}
 

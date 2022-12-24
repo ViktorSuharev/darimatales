@@ -1,13 +1,13 @@
 import {Component, Input} from '@angular/core';
-import {GeneralStyleService} from '../../services/general-style.service';
-import {PicGalleryService} from '../../services/pic-gallery.service';
+import {GeneralStyleService} from '../tales/white-snake/services/general-style.service';
+import {PicGalleryService} from '../tales/white-snake/services/pic-gallery.service';
 
 @Component({
-  selector: 'app-front-widget',
-  templateUrl: './front-widget.component.html',
-  styleUrls: ['./front-widget.component.css']
+  selector: 'app-tale-nav-ctrl',
+  templateUrl: './tale-nav-ctrl.component.html',
+  styleUrls: ['./tale-nav-ctrl.component.css']
 })
-export class FrontWidgetComponent {
+export class TaleNavCtrlComponent {
   @Input() first: string;
   @Input() last: string;
 
@@ -26,8 +26,8 @@ export class FrontWidgetComponent {
   }
 
   onClickBottomDigit(e: MouseEvent): void {
+    e.stopPropagation();
     this.generalStyleService.setLight();
     this.pictureGalleryService.show();
-    e.stopPropagation();
   }
 }

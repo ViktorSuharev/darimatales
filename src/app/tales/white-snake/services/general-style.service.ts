@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,22 +8,22 @@ export class GeneralStyleService {
   private static readonly DEFAULT_OPACITY = 1;
   private static readonly LIGHT_OPACITY = 0.7;
 
-  default = true;
+  public default: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   opacity = GeneralStyleService.DEFAULT_OPACITY;
 
   constructor() { }
 
   public setLight(): void {
-    this.default = false;
+    this.default.next(false);
     this.opacity = GeneralStyleService.LIGHT_OPACITY;
   }
 
   public setDefault(): void {
-    this.default = true;
+    this.default.next(true);
     this.opacity = GeneralStyleService.DEFAULT_OPACITY;
   }
 
   public isDefault(): boolean {
-    return this.default;
+    return this.default.getValue();
   }
 }

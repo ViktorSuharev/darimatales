@@ -1,6 +1,5 @@
-<div class="bg-img"
-     style="background-image: url('/assets/white-snake-background.svg')"
-     [ngClass]="generalStyleService.isDefault() ? 'default' : 'blurred'" (click)="setDefaultView()">
+<div [ngClass]="generalStyleService.isDefault() ? 'bg-img-default' : 'bg-img-blurred'"
+     (click)="setDefaultView()">
   <app-menu-header></app-menu-header>
 
   <div class="body-center-white-frame">

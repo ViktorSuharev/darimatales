@@ -8,7 +8,7 @@ import {Component, Input} from '@angular/core';
 export class MenuButtonComponent {
   @Input() title: string;
 
-  isNavigated = false;
+  public isNavigated = false;
 
   onNavigateMouseOnButton(event: MouseEvent): void {
     this.isNavigated = true;

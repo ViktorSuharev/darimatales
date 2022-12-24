@@ -31,21 +31,20 @@
   height: 100%;
 }
 
-
-.blurred {
+.default {
   background:
-    linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4)),
-    url('~/assets/center-pic-1.jpg');
+    linear-gradient(rgba(255,255,255,.0), rgba(255,255,255,.0)),
+    url('/assets/center-pic-1.jpg');
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.default {
+.blurred {
   background:
-    linear-gradient(rgba(255,255,255,.0), rgba(255,255,255,.0)),
-    url('~/assets/center-pic-1.jpg');
+    linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4)),
+    url('/assets/center-pic-1.jpg');
 
   background-position: center;
   background-repeat: no-repeat;

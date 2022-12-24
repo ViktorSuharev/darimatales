@@ -1,3 +1,29 @@
+.bg-img-default {
+  height: 100%;
+  position: relative;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, .0), rgba(255, 255, 255, .0)),
+    url('/assets/white-snake-background.svg');
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-img-blurred {
+  height: 100%;
+  position: relative;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .4)),
+    url('/assets/white-snake-background.svg');
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .body-center-white-frame {
   position: absolute;
   top: 15%;
@@ -5,14 +31,4 @@
   width: 70%;
   height: 70%;
   border: 2px solid white;
-}
-
-.blurred {
-  background:
-    linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4)),
-    url('~/assets/background-frameless.svg');
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }

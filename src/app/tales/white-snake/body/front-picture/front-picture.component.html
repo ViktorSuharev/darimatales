@@ -1,6 +1,6 @@
 <div [ngClass]="isNavigated ? 'full-front-button-container' : 'normal-front-button-container'">
   <div class="picture-title">NEW WORLD</div>
-  <button class="picture-btn" [ngClass]="this.generalStyleService.isDefault() ? 'default' : 'blurred'"
+  <button class="picture-btn" [ngClass]="(this.generalStyleService.default | async) ? 'default' : 'blurred'"
           title="читать историю"
           (mouseenter)="onNavigateMouseOnButton($event)"
           (mouseleave)="onNavigateMouseOutButton($event)"

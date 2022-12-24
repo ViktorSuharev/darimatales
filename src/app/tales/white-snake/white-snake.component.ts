@@ -1,25 +1,26 @@
-import { Component } from '@angular/core';
-import { GeneralStyleService } from './services/general-style.service';
-import { PicGalleryService } from './services/pic-gallery.service';
+import {Component, ViewEncapsulation} from '@angular/core';
+import {GeneralStyleService} from './services/general-style.service';
+import {PicGalleryService} from './services/pic-gallery.service';
 
 @Component({
   selector: 'app-white-snake',
   templateUrl: './white-snake.component.html',
-  styleUrls: ['./white-snake.component.css']
+  styleUrls: ['./white-snake.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class WhiteSnakeComponent {
   constructor(
     public generalStyleService: GeneralStyleService,
-    public picGalleryService: PicGalleryService) {
+    private picGalleryService: PicGalleryService) {
   }
 
   setDefaultView(): void {
-    if (!this.generalStyleService.isDefault()) {
-      this.generalStyleService.setDefault()
+    if (!this.generalStyleService.default.getValue()) {
+      this.generalStyleService.setDefault();
     }
 
     if (this.picGalleryService.visible.getValue()) {
-      this.picGalleryService.hide()
+      this.picGalleryService.hide();
     }
   }
 }
