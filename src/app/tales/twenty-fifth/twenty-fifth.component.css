@@ -8,7 +8,7 @@
 .blurred {
   background:
     linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4)),
-    url('~/assets/background-2.jpg');
+    url('/assets/background-2.jpg');
 
   background-position: center;
   background-repeat: no-repeat;

@@ -10,7 +10,7 @@
 .blurred {
   background:
     linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4)),
-    url('~/assets/nameless-child-background.jpg');
+    url('/assets/nameless-child-background.jpg');
 
   background-position: center;
   background-repeat: no-repeat;
