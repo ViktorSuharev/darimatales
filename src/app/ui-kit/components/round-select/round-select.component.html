@@ -1,0 +1,10 @@
+<div class="container">
+  <app-round-button [title]="title" (click)="flipDropDown()"></app-round-button>
+  <div class="popup" *ngIf="isDropDownOpened">
+    <div *ngFor="let opt of options">
+      <div class="pt-4">
+        <app-round-button [title]="opt.title" (click)="selectTale(opt.url)"></app-round-button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
-import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Option} from '../ui-kit/components/round-select/round-select.component';
 
 @Component({
   selector: 'app-menu-header',
@@ -7,16 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-header.component.less']
 })
 export class MenuHeaderComponent {
-  public isDropDownOpened = false;
-
-  constructor(private readonly route: Router) {}
-
-  flipDropDown(): void {
-    this.isDropDownOpened = !this.isDropDownOpened;
-  }
-
-  selectTale(page: string): void {
-    this.route.navigateByUrl(page);
-    this.flipDropDown();
-  }
+  options: Option[] = [
+    {title: 'белая змея', url: '/white-snake'},
+    {title: 'двадцать первый', url: '/twenty-fifth'},
+    {title: 'безымянный ребенок', url: '/nameless-child'},
+  ];
 }

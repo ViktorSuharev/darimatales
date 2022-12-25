@@ -1,21 +1,23 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {MenuButtonComponent} from './menu-header/menu-button/menu-button.component';
+import {RoundButtonComponent} from './ui-kit/components/round-button/round-button.component';
 import {FrontComponent} from './tales/white-snake/body/front.component';
 import {MenuHeaderComponent} from './menu-header/menu-header.component';
 import {FrontPictureComponent} from './tales/white-snake/body/front-picture/front-picture.component';
 import {TaleNavCtrlComponent} from './tale-nav-ctrl/tale-nav-ctrl.component';
 import {ProgressBarComponent} from './tale-nav-ctrl/progress-bar/progress-bar.component';
 import {PicIconComponent} from './tale-nav-ctrl/pic-galery/pic-icon/pic-icon.component';
-import {ResizeOnNavigateDirective} from './directives/resize-on-navigate.directive';
+import {ResizeOnNavigateDirective} from './ui-kit/directives/resize-on-navigate.directive';
 import {PicGalleryComponent} from './tale-nav-ctrl/pic-galery/pic-gallery.component';
 import {WhiteSnakeComponent} from './tales/white-snake/white-snake.component';
 import {TwentyFifthComponent} from './tales/twenty-fifth/twenty-fifth.component';
 import {NamelessChildComponent} from './tales/nameless-child/nameless-child.component';
 import {NoSanitizePipe} from './tales/twenty-fifth/no-sanitize.pipe';
 import {AppRoutingModule} from './app-routing.module';
-import { CompComponent } from './tales/comp/comp.component';
+import {CompComponent} from './tales/comp/comp.component';
+import {BrandIconComponent} from './ui-kit/components/brand-icon/brand-icon.component';
+import {RoundSelectComponent} from './ui-kit/components/round-select/round-select.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { CompComponent } from './tales/comp/comp.component';
     TaleNavCtrlComponent,
     FrontPictureComponent,
     ProgressBarComponent,
-    MenuButtonComponent,
+    RoundButtonComponent,
     MenuHeaderComponent,
     PicIconComponent,
     ResizeOnNavigateDirective,
@@ -33,7 +35,9 @@ import { CompComponent } from './tales/comp/comp.component';
     TwentyFifthComponent,
     NamelessChildComponent,
     NoSanitizePipe,
-    CompComponent
+    CompComponent,
+    BrandIconComponent,
+    RoundSelectComponent
   ],
   imports: [
     BrowserModule,
@@ -42,4 +46,5 @@ import { CompComponent } from './tales/comp/comp.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
