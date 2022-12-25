@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, HostListener, Input} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -12,6 +12,17 @@ export class RoundSelectComponent {
 
   @Input()
   options: Option[] = [];
+
+  @HostListener("click", ['$event'])
+  clicked(e: MouseEvent) {
+    e.stopPropagation();
+  }
+
+  @HostListener("document:click", ['$event'])
+  clickedOut(e: MouseEvent) {
+    e.stopPropagation();
+    this.isDropDownOpened = false;
+  }
 
   isDropDownOpened = false;
 
