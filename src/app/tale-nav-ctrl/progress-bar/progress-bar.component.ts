@@ -11,12 +11,12 @@ export class ProgressBarComponent implements OnInit {
   private static readonly DEFAULT_ITERATIONS: number = 100;
 
   private counter = 0;
-  private timeIntervalId: number;
+  private timeIntervalId: number = 100;
 
   completedProgress: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   ngOnInit(): void {
-    this.timeIntervalId = setInterval(
+    setInterval(
       () => {
         if (this.counter <= ProgressBarComponent.DEFAULT_ITERATIONS) {
           this.completedProgress.next(this.counter++);

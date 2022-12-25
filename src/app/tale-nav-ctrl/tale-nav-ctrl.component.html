@@ -8,7 +8,7 @@
 
 <div style="width: 100%; height: 80px">
   <div class="bottom-paging-digit" title="Перейти к историям"
-       [style.font-size]="isNavigated || (this.pictureGalleryService.visible | async) ? '80px' : '60px'"
+       [style.font-size]="isNavigated || this.pictureGalleryService.visible.getValue() ? '80px' : '60px'"
        (mouseenter)="onNavigateMouseOnBottomDigit($event)"
        (mouseleave)="onNavigateMouseOutBottomDigit($event)"
        (click)="onClickBottomDigit($event)">
@@ -16,4 +16,4 @@
   </div>
 </div>
 
-<app-pic-galery [isVisible]="this.pictureGalleryService.visible | async"></app-pic-galery>
+<app-pic-galery [isVisible]="this.pictureGalleryService.visible.getValue()"></app-pic-galery>

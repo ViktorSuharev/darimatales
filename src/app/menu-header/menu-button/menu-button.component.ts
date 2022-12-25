@@ -6,7 +6,8 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./menu-button.component.css']
 })
 export class MenuButtonComponent {
-  @Input() title: string;
+  @Input()
+  title: string = '';
 
   public isNavigated = false;
 

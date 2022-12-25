@@ -12,9 +12,9 @@ import {ResizeOnNavigateDirective} from './directives/resize-on-navigate.directi
 import {PicGalleryComponent} from './tale-nav-ctrl/pic-galery/pic-gallery.component';
 import {WhiteSnakeComponent} from './tales/white-snake/white-snake.component';
 import {TwentyFifthComponent} from './tales/twenty-fifth/twenty-fifth.component';
-import {AppRoutingModule} from './app.routing.module';
 import {NamelessChildComponent} from './tales/nameless-child/nameless-child.component';
 import {NoSanitizePipe} from './tales/twenty-fifth/no-sanitize.pipe';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [

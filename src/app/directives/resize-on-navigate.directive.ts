@@ -18,8 +18,8 @@ export class ResizeOnNavigateDirective {
     height: '100px'
   };
 
-  @HostBinding('style.width') elWidth = null;
-  @HostBinding('style.height') elHeight = null;
+  @HostBinding('style.width') elWidth: string = '';
+  @HostBinding('style.height') elHeight: string = '';
 
   constructor() {
     this.setRectangular(ResizeOnNavigateDirective.DEFAULT_SIZE);

@@ -8,8 +8,11 @@ import {PicGalleryService} from '../tales/white-snake/services/pic-gallery.servi
   styleUrls: ['./tale-nav-ctrl.component.css']
 })
 export class TaleNavCtrlComponent {
-  @Input() first: string;
-  @Input() last: string;
+  @Input()
+  first: string = '';
+
+  @Input()
+  last: string = '';
 
   isNavigated = false;
 
