@@ -13,9 +13,8 @@ import {PicGalleryComponent} from './tale-nav-ctrl/pic-galery/pic-gallery.compon
 import {WhiteSnakeComponent} from './tales/white-snake/white-snake.component';
 import {TwentyFifthComponent} from './tales/twenty-fifth/twenty-fifth.component';
 import {NamelessChildComponent} from './tales/nameless-child/nameless-child.component';
-import {NoSanitizePipe} from './tales/twenty-fifth/no-sanitize.pipe';
+import {NoSanitizePipe} from './ui-kit/pipes/no-sanitize.pipe';
 import {AppRoutingModule} from './app-routing.module';
-import {CompComponent} from './tales/comp/comp.component';
 import {BrandIconComponent} from './ui-kit/components/brand-icon/brand-icon.component';
 import {RoundSelectComponent} from './ui-kit/components/round-select/round-select.component';
 
@@ -35,7 +34,6 @@ import {RoundSelectComponent} from './ui-kit/components/round-select/round-selec
     TwentyFifthComponent,
     NamelessChildComponent,
     NoSanitizePipe,
-    CompComponent,
     BrandIconComponent,
     RoundSelectComponent
   ],
