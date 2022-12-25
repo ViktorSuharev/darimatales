@@ -3,7 +3,7 @@
 </div>
 <div class="menu-header-item">
   <app-menu-button [title]="'список историй'" (click)="flipDropDown()"></app-menu-button>
-  <div *ngIf = "isDropDownOpened">
+  <div *ngIf="isDropDownOpened">
     <div>
       <app-menu-button class="pl-10" [title]="'white-snake'" (click)="selectTale('/white-snake')">White snake</app-menu-button>
     </div>

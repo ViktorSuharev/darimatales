@@ -1,12 +1,11 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
 import {GeneralStyleService} from './services/general-style.service';
 import {PicGalleryService} from './services/pic-gallery.service';
 
 @Component({
   selector: 'app-white-snake',
   templateUrl: './white-snake.component.html',
-  styleUrls: ['./white-snake.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./white-snake.component.less']
 })
 export class WhiteSnakeComponent {
   constructor(

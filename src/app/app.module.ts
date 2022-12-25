@@ -15,6 +15,7 @@ import {TwentyFifthComponent} from './tales/twenty-fifth/twenty-fifth.component'
 import {NamelessChildComponent} from './tales/nameless-child/nameless-child.component';
 import {NoSanitizePipe} from './tales/twenty-fifth/no-sanitize.pipe';
 import {AppRoutingModule} from './app-routing.module';
+import { CompComponent } from './tales/comp/comp.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {AppRoutingModule} from './app-routing.module';
     WhiteSnakeComponent,
     TwentyFifthComponent,
     NamelessChildComponent,
-    NoSanitizePipe
+    NoSanitizePipe,
+    CompComponent
   ],
   imports: [
     BrowserModule,

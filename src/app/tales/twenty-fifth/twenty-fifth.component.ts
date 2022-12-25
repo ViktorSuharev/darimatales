@@ -1,15 +1,16 @@
 import {Component} from '@angular/core';
+import {GeneralStyleService} from '../white-snake/services/general-style.service';
 
 @Component({
   selector: 'app-twenty-fifth',
   templateUrl: './twenty-fifth.component.html',
-  styleUrls: ['./twenty-fifth.component.css']
+  styleUrls: ['./twenty-fifth.component.less']
 })
 export class TwentyFifthComponent {
   svgImage: string;
   svgInnerImage: string;
 
-  constructor() {
+  constructor(public generalStyleService: GeneralStyleService) {
     const fullWidth = window.innerWidth;
     const fullHeight = window.innerHeight;
 
