@@ -1,23 +1,20 @@
 .tooltip {
   position: fixed;
-  background-color: black;
+  background-color: white;
   border-radius: 4px;
-  color: #ffffff;
+  color: black;
   font-family: 'Playfair Display';
   padding: 3px 6px;
   font-size: 13px;
-  margin-top: 5px;
-  transform:translateX(-50%);
+
+  transform: translateY(-100%);
+  margin-bottom: 7px;
 
   &::before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid black;
-    position: absolute;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom: none;
     left: calc(50% - 5px);
-    top: -5px;
+    bottom: -10px;
   }
 }

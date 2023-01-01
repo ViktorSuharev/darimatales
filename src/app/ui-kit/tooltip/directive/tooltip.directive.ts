@@ -1,12 +1,10 @@
 import {
   ApplicationRef,
-  ComponentFactoryResolver,
   ComponentRef,
-  Directive, ElementRef,
+  Directive,
   EmbeddedViewRef,
   HostListener,
-  Injector,
-  Input, OnDestroy
+  Input, OnDestroy, ViewContainerRef
 } from '@angular/core';
 import {TooltipComponent} from '../component/tooltip.component';
 
@@ -17,25 +15,28 @@ export class TooltipDirective implements OnDestroy {
 
   @Input() tooltip = '';
 
-  private componentRef: ComponentRef<any> | null = null;
+  private componentRef: ComponentRef<TooltipComponent> | null = null;
 
   constructor(
-    private elementRef: ElementRef,
     private appRef: ApplicationRef,
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private injector: Injector) {
+    private viewContainerRef: ViewContainerRef) {
   }
 
   @HostListener('mouseenter', ['$event'])
   onMouseEnter(event: MouseEvent): void {
     if (this.componentRef === null) {
-      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(TooltipComponent);
-      this.componentRef = componentFactory.create(this.injector);
+      this.componentRef = this.viewContainerRef.createComponent(TooltipComponent);
       this.appRef.attachView(this.componentRef.hostView);
-      const domElem = (this.componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
+      const domElem: HTMLElement = (this.componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
       document.body.appendChild(domElem);
-      this.setTooltipComponentProperties(event);
     }
+
+    this.updateTooltipPosition(event);
+  }
+
+  @HostListener('mousemove', ['$event'])
+  onMouseMove(event: MouseEvent): void {
+    this.updateTooltipPosition(event)
   }
 
   @HostListener('mouseleave')
@@ -55,12 +56,11 @@ export class TooltipDirective implements OnDestroy {
     }
   }
 
-  private setTooltipComponentProperties(event: MouseEvent) {
+  private updateTooltipPosition(event: MouseEvent) {
     if (this.componentRef !== null) {
       this.componentRef.instance.tooltip = this.tooltip;
-      const {left, right, bottom} = this.elementRef.nativeElement.getBoundingClientRect();
-      this.componentRef.instance.left = (right - left) / 2 + left;
-      this.componentRef.instance.top = bottom;
+      this.componentRef.instance.left = event.clientX;
+      this.componentRef.instance.top = event.clientY;
     }
   }
 }
