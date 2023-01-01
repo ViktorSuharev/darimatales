@@ -17,6 +17,7 @@ import {NoSanitizePipe} from './ui-kit/pipes/no-sanitize.pipe';
 import {AppRoutingModule} from './app-routing.module';
 import {BrandIconComponent} from './ui-kit/components/brand-icon/brand-icon.component';
 import {RoundSelectComponent} from './ui-kit/components/round-select/round-select.component';
+import {TooltipModule} from './ui-kit/tooltip/tooltip.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {RoundSelectComponent} from './ui-kit/components/round-select/round-selec
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

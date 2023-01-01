@@ -9,7 +9,6 @@
 
 .body {
   border: 2px solid rgba(255, 255, 255, 0.4);
-  margin: -2px;
   width: 28%;
   min-height: calc(100% - 20% - 2 * 2% - 8%);
   margin-left: 12%;
@@ -27,27 +26,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   &:hover {
     border: 4px solid white;
     box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.4);
-
-    & .tooltiptext {
-      visibility: visible;
-    }
-  }
-
-  & .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: white;
-    color: black;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
+    margin: -2px -2px -2px calc(12% - 2px);
   }
 }
