@@ -8,7 +8,8 @@ import {GeneralStyleService} from '../../services/general-style.service';
   styleUrls: ['./front-picture.component.css']
 })
 export class FrontPictureComponent {
-  isNavigated = false;
+  title: string = 'ПЕРЕЙТИ К ИСТОРИИ';
+  isNavigated: boolean = false;
 
   constructor(public generalStyleService: GeneralStyleService,
               private pictureGalleryService: PicGalleryService) {
