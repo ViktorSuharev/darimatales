@@ -1,1 +1,5 @@
-<div appResizeOnNavigate class="pic-icon" (click)="onPictureItemClick($event)"></div>
+<div appResizeOnNavigate
+     class="pic-icon"
+     [style.background-image]="option?.image"
+     (click)="onPictureItemClick($event)"
+></div>

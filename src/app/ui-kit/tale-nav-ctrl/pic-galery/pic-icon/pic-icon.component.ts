@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Router} from '@angular/router';
+import {Option} from '../../../components/round-select/round-select.component';
 
 @Component({
   selector: 'app-pic-item',
@@ -7,8 +9,17 @@ import { Component } from '@angular/core';
 })
 export class PicIconComponent {
 
+  @Input()
+  option?: Option;
+
+  constructor(private readonly route: Router) {
+  }
+
   onPictureItemClick(e: MouseEvent): void {
     // implement navigation to page
     e.stopPropagation();
+    if (this.option !== undefined) {
+      this.route.navigateByUrl(this.option.url);
+    }
   }
 }

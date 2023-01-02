@@ -14,7 +14,7 @@ export class RoundSelectComponent {
   options: Option[] = [];
 
   @HostListener("click", ['$event'])
-  clicked(e: MouseEvent) {
+  clickIn(e: MouseEvent) {
     e.stopPropagation();
   }
 
@@ -41,4 +41,5 @@ export class RoundSelectComponent {
 export interface Option {
   title: string;
   url: string;
+  image?: string;
 }

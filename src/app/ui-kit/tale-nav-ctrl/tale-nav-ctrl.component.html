@@ -1,11 +1,13 @@
 <div [style.color]="color">
   <div class="top-paging-digit">{{current}}</div>
   <app-progress-bar class="paging-progress-indicator"></app-progress-bar>
-  <div class="bottom-paging-digit" [tooltip]="title"
-       [style.font-size]="isNavigated || this.pictureGalleryService.visible.getValue() ? '80px' : '60px'"
-       (mouseenter)="onNavigateMouseOnBottomDigit($event)"
-       (mouseleave)="onNavigateMouseOutBottomDigit($event)"
-       (click)="onClickBottomDigit($event)">
+  <div
+      class="bottom-paging-digit"
+      [tooltip]="title"
+      [style.font-size]="isNavigated || this.pictureGalleryService.visible.getValue() ? '80px' : '60px'"
+      (mouseenter)="isNavigated = true"
+      (mouseleave)="isNavigated = false"
+      (click)="onClickBottomDigit($event)">
     {{total}}
   </div>
 

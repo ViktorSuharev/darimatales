@@ -1,5 +1,5 @@
 <div *ngIf="isVisible" class="picture-gallery">
-  <app-pic-item></app-pic-item>
-  <app-pic-item></app-pic-item>
-  <app-pic-item></app-pic-item>
+  <ng-container *ngFor="let option of options">
+    <app-pic-item [option]="option"></app-pic-item>
+  </ng-container>
 </div>
