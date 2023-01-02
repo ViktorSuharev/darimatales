@@ -1,8 +1,16 @@
 <div class="bg">
   <div class="header">
-    <app-menu-header></app-menu-header>
+    <app-header></app-header>
   </div>
-  <div class="body" [tooltip]="title">
-    {{ name }}
+  <div class="container">
+    <div class="body" [tooltip]="title">
+      {{ name }}
+    </div>
+    <app-tale-nav-ctrl
+      class="nav-ctrl"
+      current="03"
+      total="03"
+      color="white"
+    ></app-tale-nav-ctrl>
   </div>
 </div>

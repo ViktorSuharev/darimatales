@@ -1,25 +1,25 @@
-import {Component, OnInit} from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-progress-bar',
   templateUrl: './progress-bar.component.html',
-  styleUrls: ['./progress-bar.component.css']
+  styleUrls: ['./progress-bar.component.less']
 })
 export class ProgressBarComponent implements OnInit {
   private static readonly DEFAULT_TIMEOUT_MS: number = 1000;
   private static readonly DEFAULT_ITERATIONS: number = 100;
-
-  private counter = 0;
   private timeIntervalId: number = 100;
 
-  completedProgress: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  public completedProgress: number = 0;
+
+  @Input()
+  color: string = '';
 
   ngOnInit(): void {
     setInterval(
       () => {
-        if (this.counter <= ProgressBarComponent.DEFAULT_ITERATIONS) {
-          this.completedProgress.next(this.counter++);
+        if (this.completedProgress <= ProgressBarComponent.DEFAULT_ITERATIONS) {
+          this.completedProgress++;
         } else {
           clearInterval(this.timeIntervalId);
         }

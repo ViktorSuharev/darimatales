@@ -1,19 +1,23 @@
 import {Component, Input} from '@angular/core';
-import {GeneralStyleService} from '../tales/white-snake/services/general-style.service';
-import {PicGalleryService} from '../tales/white-snake/services/pic-gallery.service';
+import {GeneralStyleService} from '../../tales/white-snake/services/general-style.service';
+import {PicGalleryService} from '../../tales/white-snake/services/pic-gallery.service';
 
 @Component({
   selector: 'app-tale-nav-ctrl',
   templateUrl: './tale-nav-ctrl.component.html',
-  styleUrls: ['./tale-nav-ctrl.component.css']
+  styleUrls: ['./tale-nav-ctrl.component.less']
 })
 export class TaleNavCtrlComponent {
   @Input()
-  first: string = '';
+  current: string = '';
 
   @Input()
-  last: string = '';
+  total: string = '';
 
+  @Input()
+  color: string = '';
+
+  title: string = 'ВЫБРАТЬ ИСТОРИЮ';
   isNavigated = false;
 
   constructor(private generalStyleService: GeneralStyleService,

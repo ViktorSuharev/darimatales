@@ -1,8 +1,6 @@
 import {
-  ApplicationRef,
   ComponentRef,
   Directive,
-  EmbeddedViewRef,
   HostListener,
   Input, OnDestroy, ViewContainerRef
 } from '@angular/core';
@@ -17,18 +15,13 @@ export class TooltipDirective implements OnDestroy {
 
   private componentRef: ComponentRef<TooltipComponent> | null = null;
 
-  constructor(
-    private appRef: ApplicationRef,
-    private viewContainerRef: ViewContainerRef) {
+  constructor(private viewContainerRef: ViewContainerRef) {
   }
 
   @HostListener('mouseenter', ['$event'])
   onMouseEnter(event: MouseEvent): void {
     if (this.componentRef === null) {
       this.componentRef = this.viewContainerRef.createComponent(TooltipComponent);
-      this.appRef.attachView(this.componentRef.hostView);
-      const domElem: HTMLElement = (this.componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
-      document.body.appendChild(domElem);
     }
 
     this.updateTooltipPosition(event);
@@ -50,7 +43,6 @@ export class TooltipDirective implements OnDestroy {
 
   destroy(): void {
     if (this.componentRef !== null) {
-      this.appRef.detachView(this.componentRef.hostView);
       this.componentRef.destroy();
       this.componentRef = null;
     }

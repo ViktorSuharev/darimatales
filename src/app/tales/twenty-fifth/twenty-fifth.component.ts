@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {GeneralStyleService} from '../white-snake/services/general-style.service';
 
 @Component({
   selector: 'app-twenty-fifth',
@@ -10,7 +9,7 @@ export class TwentyFifthComponent {
   svgImage: string;
   svgInnerImage: string;
 
-  constructor(public generalStyleService: GeneralStyleService) {
+  constructor() {
     const fullWidth = window.innerWidth;
     const fullHeight = window.innerHeight;
 
