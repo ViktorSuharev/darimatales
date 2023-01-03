@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Option} from '../../components/round-select/round-select.component';
+import {Option} from '../../../ui-kit/round-select/round-select.component';
 
 @Component({
   selector: 'app-pic-galery',

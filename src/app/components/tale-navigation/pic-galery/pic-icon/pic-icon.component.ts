@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Router} from '@angular/router';
-import {Option} from '../../../components/round-select/round-select.component';
+import {Option} from '../../../../ui-kit/round-select/round-select.component';
 import {PicGalleryService} from '../../../../services/pic-gallery.service';
 
 @Component({

@@ -6,7 +6,7 @@ interface Rectangular {
 }
 
 @Directive({
-  selector: '[appResizeOnNavigate]'
+  selector: '[resize-on-hover]'
 })
 export class ResizeOnNavigateDirective {
   private static readonly DEFAULT_SIZE: Rectangular = {
