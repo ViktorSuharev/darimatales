@@ -10,7 +10,7 @@ export class FrontPictureComponent {
   title: string = 'ПЕРЕЙТИ К ИСТОРИИ';
   isNavigated: boolean = false;
 
-  constructor(private pictureGalleryService: PicGalleryService) {
+  constructor(public pictureGalleryService: PicGalleryService) {
   }
 
   onNavigateMouseOnButton(event: MouseEvent): void {

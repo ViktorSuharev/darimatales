@@ -7,9 +7,17 @@
       [style.font-size]="isNavigated || this.pictureGalleryService.visible.getValue() ? '80px' : '60px'"
       (mouseenter)="isNavigated = true"
       (mouseleave)="isNavigated = false"
-      (click)="onClickBottomDigit($event)">
+      (click)="onClickBottomDigit($event, tpl)">
     {{total}}
   </div>
 
-  <app-pic-galery [isVisible]="this.pictureGalleryService.visible.getValue()"></app-pic-galery>
+<!--  <app-pic-galery [isVisible]="this.pictureGalleryService.visible.getValue()"></app-pic-galery>-->
 </div>
+
+<ng-template #tpl let-close="close">
+  <div class="modal-card">
+    <section class="modal-card-body">
+      <app-pic-galery [isVisible]="this.pictureGalleryService.visible.getValue()"></app-pic-galery>
+    </section>
+  </div>
+</ng-template>

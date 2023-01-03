@@ -21,7 +21,6 @@ export class PicIconComponent {
   }
 
   onPictureItemClick(e: MouseEvent): void {
-    // implement navigation to page
     e.stopPropagation();
     if (this.option !== undefined) {
       this.route.navigateByUrl(this.option.url);

@@ -4,7 +4,7 @@ import {Option} from '../../components/round-select/round-select.component';
 @Component({
   selector: 'app-pic-galery',
   templateUrl: './pic-gallery.component.html',
-  styleUrls: ['./pic-gallery.component.css']
+  styleUrls: ['./pic-gallery.component.less']
 })
 export class PicGalleryComponent {
   public readonly options: Option[] = [
