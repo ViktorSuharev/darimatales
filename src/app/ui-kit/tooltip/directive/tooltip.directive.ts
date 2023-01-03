@@ -11,7 +11,7 @@ import {TooltipComponent} from '../component/tooltip.component';
 })
 export class TooltipDirective implements OnDestroy {
 
-  @Input() tooltip = '';
+  @Input() tooltip: string = '';
 
   private componentRef: ComponentRef<TooltipComponent> | null = null;
 
@@ -50,7 +50,7 @@ export class TooltipDirective implements OnDestroy {
 
   private updateTooltipPosition(event: MouseEvent) {
     if (this.componentRef !== null) {
-      this.componentRef.instance.tooltip = this.tooltip;
+      this.componentRef.instance.text = this.tooltip;
       this.componentRef.instance.left = event.clientX;
       this.componentRef.instance.top = event.clientY;
     }

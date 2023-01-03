@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./tooltip.component.less']
 })
 export class TooltipComponent {
-  tooltip: string = '';
+  text: string = '';
   left: number = 0;
   top: number = 0;
 

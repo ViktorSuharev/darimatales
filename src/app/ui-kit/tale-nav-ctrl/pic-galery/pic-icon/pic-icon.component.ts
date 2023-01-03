@@ -11,7 +11,10 @@ import {PicGalleryService} from '../../../../services/pic-gallery.service';
 export class PicIconComponent {
 
   @Input()
-  option?: Option;
+  option: Option = {
+    title: '',
+    url: ''
+  };
 
   constructor(private readonly route: Router,
               private readonly pictureGalleryService: PicGalleryService) {
