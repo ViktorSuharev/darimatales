@@ -9,6 +9,6 @@ import {PicGalleryService} from './services/pic-gallery.service';
 export class AppComponent {
   title = 'darimatales';
 
-  constructor(public pictureGalleryService: PicGalleryService) {
+  constructor(public readonly pictureGalleryService: PicGalleryService) {
   }
 }
