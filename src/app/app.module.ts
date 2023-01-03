@@ -2,9 +2,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {RoundButtonComponent} from './ui-kit/round-button/round-button.component';
-import {FrontComponent} from './tales/white-snake/body/front.component';
 import {HeaderComponent} from './header/header.component';
-import {FrontPictureComponent} from './tales/white-snake/body/front-picture/front-picture.component';
+import {FrontPictureComponent} from './tales/white-snake/front-picture/front-picture.component';
 import {TaleNavigationComponent} from './components/tale-navigation/tale-navigation.component';
 import {ProgressBarComponent} from './components/tale-navigation/progress-bar/progress-bar.component';
 import {PicIconComponent} from './components/tale-navigation/pic-galery/pic-icon/pic-icon.component';
@@ -23,7 +22,6 @@ import {OverlayModule} from '@angular/cdk/overlay';
 @NgModule({
   declarations: [
     AppComponent,
-    FrontComponent,
     TaleNavigationComponent,
     FrontPictureComponent,
     ProgressBarComponent,

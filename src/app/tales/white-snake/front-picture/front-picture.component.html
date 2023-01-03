@@ -1,0 +1,9 @@
+<div [ngClass]="isNavigated ? 'full-front-button-container' : 'normal-front-button-container'">
+  <div class="picture-title">NEW WORLD</div>
+  <button
+    class="picture-btn default"
+    [tooltip]="title"
+    (mouseenter)="isNavigated = true"
+    (mouseleave)="isNavigated = false"
+  ></button>
+</div>

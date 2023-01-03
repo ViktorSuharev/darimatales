@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {PicGalleryService} from './components/tale-navigation/services/pic-gallery.service';
+import {OverlayService} from './components/tale-navigation/services/overlay.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,6 @@ import {PicGalleryService} from './components/tale-navigation/services/pic-galle
 export class AppComponent {
   title = 'darimatales';
 
-  constructor(public readonly pictureGalleryService: PicGalleryService) {
+  constructor(public readonly overlayService: OverlayService) {
   }
 }

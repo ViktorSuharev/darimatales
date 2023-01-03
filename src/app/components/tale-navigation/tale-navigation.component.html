@@ -4,7 +4,7 @@
   <div
       class="bottom-paging-digit"
       [tooltip]="title"
-      [style.font-size]="isNavigated || this.pictureGalleryService.visible ? '80px' : '60px'"
+      [style.font-size]="isNavigated || this.overlayService.visible ? '80px' : '60px'"
       (mouseenter)="isNavigated = true"
       (mouseleave)="isNavigated = false"
       (click)="onClickBottomDigit($event, tpl)">
@@ -15,7 +15,7 @@
 <ng-template #tpl>
   <div class="modal-card">
     <section class="modal-card-body">
-      <app-pic-galery [isVisible]="this.pictureGalleryService.visible"></app-pic-galery>
+      <app-pic-galery [isVisible]="this.overlayService.visible"></app-pic-galery>
     </section>
   </div>
 </ng-template>
