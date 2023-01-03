@@ -1,7 +1,5 @@
 import {Component, HostListener, Input} from '@angular/core';
-import {GeneralStyleService} from '../../tales/white-snake/services/general-style.service';
-import {PicGalleryService} from '../../tales/white-snake/services/pic-gallery.service';
-import {Option} from '../components/round-select/round-select.component';
+import {PicGalleryService} from '../../services/pic-gallery.service';
 
 @Component({
   selector: 'app-tale-nav-ctrl',
@@ -21,24 +19,21 @@ export class TaleNavCtrlComponent {
   title: string = 'ВЫБРАТЬ ИСТОРИЮ';
   isNavigated = false;
 
-  constructor(private generalStyleService: GeneralStyleService,
-              public pictureGalleryService: PicGalleryService) {
+  constructor(public pictureGalleryService: PicGalleryService) {
   }
 
   onClickBottomDigit(e: MouseEvent): void {
     e.stopPropagation();
-    this.generalStyleService.setLight();
-    this.pictureGalleryService.show();
+    if (this.pictureGalleryService.visible.getValue()) {
+      this.pictureGalleryService.hide();
+    } else {
+      this.pictureGalleryService.show();
+    }
   }
 
   @HostListener("document:click", ['$event'])
   clickedOut(e: MouseEvent) {
     e.stopPropagation();
-
-    if (!this.generalStyleService.default.getValue()) {
-      this.generalStyleService.setDefault();
-    }
-
     if (this.pictureGalleryService.visible.getValue()) {
       this.pictureGalleryService.hide();
     }

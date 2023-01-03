@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Router} from '@angular/router';
 import {Option} from '../../../components/round-select/round-select.component';
+import {PicGalleryService} from '../../../../services/pic-gallery.service';
 
 @Component({
   selector: 'app-pic-item',
@@ -12,7 +13,8 @@ export class PicIconComponent {
   @Input()
   option?: Option;
 
-  constructor(private readonly route: Router) {
+  constructor(private readonly route: Router,
+              private readonly pictureGalleryService: PicGalleryService) {
   }
 
   onPictureItemClick(e: MouseEvent): void {
@@ -20,6 +22,7 @@ export class PicIconComponent {
     e.stopPropagation();
     if (this.option !== undefined) {
       this.route.navigateByUrl(this.option.url);
+      this.pictureGalleryService.hide();
     }
   }
 }
