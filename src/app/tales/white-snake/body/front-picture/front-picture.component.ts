@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {PicGalleryService} from '../../../../services/pic-gallery.service';
+import {PicGalleryService} from '../../../../components/tale-navigation/services/pic-gallery.service';
 
 @Component({
   selector: 'app-front-picture',
@@ -14,7 +14,7 @@ export class FrontPictureComponent {
   }
 
   onNavigateMouseOnButton(event: MouseEvent): void {
-    if (!this.pictureGalleryService.visible.getValue()) {
+    if (!this.pictureGalleryService.visible) {
       this.isNavigated = true;
     }
   }

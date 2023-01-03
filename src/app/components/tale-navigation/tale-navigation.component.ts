@@ -1,5 +1,5 @@
 import {Component, HostListener, Input, TemplateRef, ViewContainerRef} from '@angular/core';
-import {PicGalleryService} from '../../services/pic-gallery.service';
+import {PicGalleryService} from './services/pic-gallery.service';
 import {Overlay, OverlayConfig} from '@angular/cdk/overlay';
 import {TemplatePortal} from '@angular/cdk/portal';
 
@@ -19,7 +19,7 @@ export class TaleNavigationComponent {
   color: string = '';
 
   title: string = 'ВЫБРАТЬ ИСТОРИЮ';
-  isNavigated = false;
+  isNavigated: boolean = false;
 
   constructor(public readonly pictureGalleryService: PicGalleryService,
               private readonly overlay: Overlay,
@@ -39,7 +39,7 @@ export class TaleNavigationComponent {
 
   onClickBottomDigit(e: MouseEvent, tpl: TemplateRef<any>): void {
     e.stopPropagation();
-    if (this.pictureGalleryService.visible.getValue()) {
+    if (this.pictureGalleryService.visible) {
       this.pictureGalleryService.hide();
     } else {
       this.pictureGalleryService.show();
@@ -51,7 +51,7 @@ export class TaleNavigationComponent {
   @HostListener("document:click", ['$event'])
   clickedOut(e: MouseEvent) {
     e.stopPropagation();
-    if (this.pictureGalleryService.visible.getValue()) {
+    if (this.pictureGalleryService.visible) {
       this.pictureGalleryService.hide();
     }
   }

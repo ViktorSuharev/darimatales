@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {PicGalleryService} from './services/pic-gallery.service';
+import {PicGalleryService} from './components/tale-navigation/services/pic-gallery.service';
 
 @Component({
   selector: 'app-root',

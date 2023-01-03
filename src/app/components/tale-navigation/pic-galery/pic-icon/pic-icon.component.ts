@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Router} from '@angular/router';
 import {Option} from '../../../../ui-kit/round-select/round-select.component';
-import {PicGalleryService} from '../../../../services/pic-gallery.service';
+import {PicGalleryService} from '../../services/pic-gallery.service';
 
 @Component({
   selector: 'app-pic-item',
