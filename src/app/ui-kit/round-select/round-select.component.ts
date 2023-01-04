@@ -1,17 +1,32 @@
-import {Component, HostListener, Input} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
+import {Named} from '../model/named.model';
+
+interface SelectOption<T extends Named> {
+  title: string,
+  value: T
+}
 
 @Component({
   selector: 'app-round-select',
   templateUrl: './round-select.component.html',
   styleUrls: ['./round-select.component.less']
 })
-export class RoundSelectComponent {
+export class RoundSelectComponent<T extends Named> {
+
   @Input()
   title: string = '';
 
   @Input()
-  options: Option[] = [];
+  set options(opts: T[]) {
+    if (opts !== undefined && opts !== null) {
+      this.selectOptions = opts.map(o => this.mapInput(o));
+    }
+  }
+
+  @Output()
+  onSelect: EventEmitter<T> = new EventEmitter<T>();
+
+  selectOptions: SelectOption<T>[] = [];
 
   @HostListener("click", ['$event'])
   clickIn(e: MouseEvent) {
@@ -26,20 +41,19 @@ export class RoundSelectComponent {
 
   isDropDownOpened = false;
 
-  constructor(private readonly route: Router) {}
-
   flipDropDown(): void {
     this.isDropDownOpened = !this.isDropDownOpened;
   }
 
-  selectTale(page: string): void {
-    this.route.navigateByUrl(page);
+  select(opt: SelectOption<T>): void {
+    this.onSelect.next(opt.value);
     this.flipDropDown();
   }
-}
 
-export interface Option {
-  title: string;
-  url: string;
-  image?: string;
+  private mapInput(o: T): SelectOption<T> {
+    return {
+      title: o.title,
+      value: o
+    };
+  }
 }

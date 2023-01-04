@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Router} from '@angular/router';
-import {Option} from '../../../../ui-kit/round-select/round-select.component';
 import {OverlayService} from '../../services/overlay.service';
+import {Option} from '../../../../model/option.model';
 
 @Component({
   selector: 'app-pic-item',

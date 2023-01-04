@@ -1,9 +1,9 @@
 <div class="container">
   <app-round-button [title]="title" (click)="flipDropDown()"></app-round-button>
   <div class="popup" *ngIf="isDropDownOpened">
-    <div *ngFor="let opt of options">
+    <div *ngFor="let opt of selectOptions">
       <div class="pt-4">
-        <app-round-button [title]="opt.title" (click)="selectTale(opt.url)"></app-round-button>
+        <app-round-button [title]="opt.title" (click)="select(opt)"></app-round-button>
       </div>
     </div>
   </div>
