@@ -9,13 +9,6 @@ import {Option} from '../../../../model/option.model';
   styleUrls: ['./pic-icon.component.css']
 })
 export class PicIconComponent {
-
-  @Input()
-  width: string = '';
-
-  @Input()
-  height: string = '';
-
   @Input()
   option: Option = {
     title: '',
