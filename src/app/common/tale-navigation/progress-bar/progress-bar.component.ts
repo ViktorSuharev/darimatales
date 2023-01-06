@@ -8,12 +8,12 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ProgressBarComponent implements OnInit {
   private static readonly DEFAULT_TIMEOUT_MS: number = 1000;
   private static readonly DEFAULT_ITERATIONS: number = 100;
-  private timeIntervalId: number = 100;
+  private static readonly DEFAULT_TIME_INTERVAL: number = 100;
 
   public completedProgress: number = 0;
 
   @Input()
-  color: string = '';
+  color: string | undefined;
 
   ngOnInit(): void {
     setInterval(
@@ -21,7 +21,7 @@ export class ProgressBarComponent implements OnInit {
         if (this.completedProgress <= ProgressBarComponent.DEFAULT_ITERATIONS) {
           this.completedProgress++;
         } else {
-          clearInterval(this.timeIntervalId);
+          clearInterval(ProgressBarComponent.DEFAULT_TIME_INTERVAL);
         }
       }, ProgressBarComponent.DEFAULT_TIMEOUT_MS);
   }

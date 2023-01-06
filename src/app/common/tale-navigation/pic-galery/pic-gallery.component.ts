@@ -1,4 +1,4 @@
-import {Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output} from '@angular/core';
 import {Option} from '../../../model/option.model';
 
 @Component({
@@ -6,7 +6,7 @@ import {Option} from '../../../model/option.model';
   templateUrl: './pic-gallery.component.html',
   styleUrls: ['./pic-gallery.component.less']
 })
-export class PicGalleryComponent implements OnInit {
+export class PicGalleryComponent implements OnChanges {
 
   @Input()
   options: Option[] = [];
@@ -23,7 +23,7 @@ export class PicGalleryComponent implements OnInit {
   private marginPx: number = 30;
   private factor: number = 2;
 
-  ngOnInit() {
+  ngOnChanges() {
     const topDiff: number = this.heightPx / 2;
     const leftDiff: number = (this.options.length * this.widthPx + (this.options.length - 1) * this.marginPx) / 2;
     this.topStyle = `calc(50% - ${PicGalleryComponent.px(topDiff)})`;

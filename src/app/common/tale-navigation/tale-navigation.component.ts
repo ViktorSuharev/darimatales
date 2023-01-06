@@ -1,5 +1,5 @@
 import {Component, HostListener, Input, TemplateRef, ViewContainerRef} from '@angular/core';
-import {OverlayService} from './services/overlay.service';
+import {OverlayService} from '../overlay.service';
 import {Overlay, OverlayConfig} from '@angular/cdk/overlay';
 import {TemplatePortal} from '@angular/cdk/portal';
 import {Option} from '../../model/option.model';

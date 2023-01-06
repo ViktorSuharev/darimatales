@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {OverlayService} from './components/tale-navigation/services/overlay.service';
+import {OverlayService} from './common/overlay.service';
 
 @Component({
   selector: 'app-root',
