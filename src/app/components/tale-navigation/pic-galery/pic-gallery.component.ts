@@ -1,5 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Option} from '../../../model/option.model';
+import {Router} from '@angular/router';
+import {OverlayService} from '../services/overlay.service';
 
 @Component({
   selector: 'app-pic-gallery',
@@ -17,4 +19,14 @@ export class PicGalleryComponent {
   height: string = '50px';
 
   @Input() isVisible = false;
+
+  constructor(private readonly route: Router,
+              private readonly overlayService: OverlayService) {
+  }
+
+  onClick(option: Option, e: MouseEvent): void {
+    e.stopPropagation();
+    this.route.navigateByUrl(option.url);
+    this.overlayService.hide();
+  }
 }

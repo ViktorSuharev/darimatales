@@ -1,9 +1,11 @@
 <div *ngIf="isVisible" class="picture-gallery">
   <ng-container *ngFor="let option of options">
-    <app-pic-item
+    <div
       resize-on-hover
-      class="pic"
-      [option]="option"
-    ></app-pic-item>
+      class="pic-icon"
+      [style.background-image]="option.image"
+      [tooltip]="option.title"
+      (click)="onClick(option, $event)"
+    ></div>
   </ng-container>
 </div>
