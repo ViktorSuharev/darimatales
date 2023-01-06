@@ -1,6 +1,8 @@
-<div resize-on-hover
-     [tooltip]="option.title"
-     class="pic-icon"
-     [style.background-image]="option.image"
-     (click)="onPictureItemClick($event)"
+<div
+  class="pic-icon"
+  [tooltip]="option.title"
+  [style.background-image]="option.image"
+  [style.width]="width"
+  [style.height]="height"
+  (click)="onPictureItemClick($event)"
 ></div>

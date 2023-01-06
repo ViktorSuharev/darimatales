@@ -1,5 +1,11 @@
 <div *ngIf="isVisible" class="picture-gallery">
   <ng-container *ngFor="let option of options">
-    <app-pic-item [option]="option"></app-pic-item>
+    <app-pic-item
+      resize-on-hover
+      class="pic-icon"
+      [option]="option"
+      [width]="width"
+      [height]="height"
+    ></app-pic-item>
   </ng-container>
 </div>

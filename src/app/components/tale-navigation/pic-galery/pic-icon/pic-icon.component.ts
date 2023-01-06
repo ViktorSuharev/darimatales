@@ -11,6 +11,12 @@ import {Option} from '../../../../model/option.model';
 export class PicIconComponent {
 
   @Input()
+  width: string = '';
+
+  @Input()
+  height: string = '';
+
+  @Input()
   option: Option = {
     title: '',
     url: ''
