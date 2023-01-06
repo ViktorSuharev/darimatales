@@ -1,5 +1,5 @@
 import {Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output} from '@angular/core';
-import {Option} from '../../../model/option.model';
+import {Tale} from '../../../model/tale.model';
 
 @Component({
   selector: 'app-pic-gallery',
@@ -9,10 +9,10 @@ import {Option} from '../../../model/option.model';
 export class PicGalleryComponent implements OnChanges {
 
   @Input()
-  options: Option[] = [];
+  options: Tale[] = [];
 
   @Output()
-  select: EventEmitter<Option> = new EventEmitter<Option>();
+  select: EventEmitter<Tale> = new EventEmitter<Tale>();
 
   topStyle: string = '';
   leftStyle: string = '';
@@ -44,7 +44,7 @@ export class PicGalleryComponent implements OnChanges {
     this.heightStyle = PicGalleryComponent.px(this.heightPx);
   }
 
-  onClick(option: Option, e: MouseEvent): void {
+  onClick(option: Tale, e: MouseEvent): void {
     e.stopPropagation();
     this.select.emit(option);
   }

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
-import {Option} from '../model/option.model';
+import {Tale} from '../model/tale.model';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +8,7 @@ import {Option} from '../model/option.model';
   styleUrls: ['./header.component.less']
 })
 export class HeaderComponent {
-  options: Option[] = [
+  tales: Tale[] = [
     {title: 'белая змея', url: '/white-snake'},
     {title: 'двадцать первый', url: '/twenty-fifth'},
     {title: 'безымянный ребенок', url: '/nameless-child'},
@@ -17,7 +17,7 @@ export class HeaderComponent {
   constructor(private readonly route: Router) {
   }
 
-  navigate(option: Option) {
-    this.route.navigateByUrl(option.url);
+  navigate(tale: Tale) {
+    this.route.navigateByUrl(tale.url);
   }
 }

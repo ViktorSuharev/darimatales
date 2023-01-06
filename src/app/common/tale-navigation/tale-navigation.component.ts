@@ -2,7 +2,7 @@ import {Component, HostListener, Input, TemplateRef, ViewContainerRef} from '@an
 import {OverlayService} from '../overlay.service';
 import {Overlay, OverlayConfig} from '@angular/cdk/overlay';
 import {TemplatePortal} from '@angular/cdk/portal';
-import {Option} from '../../model/option.model';
+import {Tale} from '../../model/tale.model';
 import {Router} from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./tale-navigation.component.less']
 })
 export class TaleNavigationComponent {
-  public readonly options: Option[] = [
+  public readonly tales: Tale[] = [
     {title: 'белая змея', url: '/white-snake', image: 'url(\'/assets/center-pic-1.jpg\')'},
     {title: 'двадцать первый', url: '/twenty-fifth', image: 'url(\'/assets/twenty-fifth-background.jpg\')'},
     {title: 'безымянный ребенок', url: '/nameless-child', image: 'url(\'/assets/nameless-child-background.jpg\')'},
@@ -46,8 +46,8 @@ export class TaleNavigationComponent {
     this.openWithTemplate(overlay);
   }
 
-  onSelect(option: Option) {
-    this.route.navigateByUrl(option.url);
+  onSelect(tale: Tale) {
+    this.route.navigateByUrl(tale.url);
     this.overlayService.hide();
   }
 

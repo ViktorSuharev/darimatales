@@ -13,13 +13,9 @@
 </div>
 
 <ng-template #overlay>
-  <div class="modal-card">
-    <section class="modal-card-body">
-      <app-pic-gallery
-        *ngIf="this.overlayService.visible"
-        [options]="options"
-        (select)="onSelect($event)"
-      ></app-pic-gallery>
-    </section>
-  </div>
+  <app-pic-gallery
+    *ngIf="this.overlayService.visible"
+    [options]="tales"
+    (select)="onSelect($event)"
+  ></app-pic-gallery>
 </ng-template>
