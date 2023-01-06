@@ -15,7 +15,7 @@
 <ng-template #overlay>
   <app-pic-gallery
     *ngIf="this.overlayService.visible"
-    [options]="tales"
+    [tales]="tales"
     (select)="onSelect($event)"
   ></app-pic-gallery>
 </ng-template>

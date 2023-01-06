@@ -1,12 +1,12 @@
 <div class="picture-gallery" [style.top]="topStyle" [style.left]="leftStyle">
-  <ng-container *ngFor="let option of options">
+  <ng-container *ngFor="let tale of tales">
     <div
       resize-on-hover
       class="pic-icon"
-      [style.background-image]="option.image"
+      [style.background-image]="tale.image"
       [style.margin-right]="marginStyle"
-      [tooltip]="option.title"
-      (click)="onClick(option, $event)"
+      [tooltip]="tale.title"
+      (click)="onClick(tale, $event)"
     ></div>
   </ng-container>
 </div>

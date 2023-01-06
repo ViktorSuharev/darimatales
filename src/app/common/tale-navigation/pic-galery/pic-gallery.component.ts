@@ -9,7 +9,7 @@ import {Tale} from '../../../model/tale.model';
 export class PicGalleryComponent implements OnChanges {
 
   @Input()
-  options: Tale[] = [];
+  tales: Tale[] = [];
 
   @Output()
   select: EventEmitter<Tale> = new EventEmitter<Tale>();
@@ -25,7 +25,7 @@ export class PicGalleryComponent implements OnChanges {
 
   ngOnChanges() {
     const topDiff: number = this.heightPx / 2;
-    const leftDiff: number = (this.options.length * this.widthPx + (this.options.length - 1) * this.marginPx) / 2;
+    const leftDiff: number = (this.tales.length * this.widthPx + (this.tales.length - 1) * this.marginPx) / 2;
     this.topStyle = `calc(50% - ${PicGalleryComponent.px(topDiff)})`;
     this.leftStyle = `calc(50% - ${PicGalleryComponent.px(leftDiff)}`;
     this.marginStyle = PicGalleryComponent.px(this.marginPx);
@@ -44,9 +44,9 @@ export class PicGalleryComponent implements OnChanges {
     this.heightStyle = PicGalleryComponent.px(this.heightPx);
   }
 
-  onClick(option: Tale, e: MouseEvent): void {
+  onClick(tale: Tale, e: MouseEvent): void {
     e.stopPropagation();
-    this.select.emit(option);
+    this.select.emit(tale);
   }
 
   private static px(value: number): string {
