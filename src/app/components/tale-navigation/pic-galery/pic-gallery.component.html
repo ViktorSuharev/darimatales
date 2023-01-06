@@ -1,9 +1,10 @@
-<div class="picture-gallery">
+<div class="picture-gallery" [style.top]="topStyle" [style.left]="leftStyle">
   <ng-container *ngFor="let option of options">
     <div
       resize-on-hover
       class="pic-icon"
       [style.background-image]="option.image"
+      [style.margin-right]="marginStyle"
       [tooltip]="option.title"
       (click)="onClick(option, $event)"
     ></div>
