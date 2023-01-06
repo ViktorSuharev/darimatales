@@ -2,6 +2,8 @@ import {Component, HostListener, Input, TemplateRef, ViewContainerRef} from '@an
 import {OverlayService} from './services/overlay.service';
 import {Overlay, OverlayConfig} from '@angular/cdk/overlay';
 import {TemplatePortal} from '@angular/cdk/portal';
+import {Option} from '../../model/option.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-tale-navigation',
@@ -9,6 +11,12 @@ import {TemplatePortal} from '@angular/cdk/portal';
   styleUrls: ['./tale-navigation.component.less']
 })
 export class TaleNavigationComponent {
+  public readonly options: Option[] = [
+    {title: 'белая змея', url: '/white-snake', image: 'url(\'/assets/center-pic-1.jpg\')'},
+    {title: 'двадцать первый', url: '/twenty-fifth', image: 'url(\'/assets/twenty-fifth-background.jpg\')'},
+    {title: 'безымянный ребенок', url: '/nameless-child', image: 'url(\'/assets/nameless-child-background.jpg\')'},
+  ];
+
   @Input()
   current: string = '';
 
@@ -23,21 +31,11 @@ export class TaleNavigationComponent {
 
   constructor(public readonly overlayService: OverlayService,
               private readonly overlay: Overlay,
+              private readonly route: Router,
               private readonly viewContainerRef: ViewContainerRef) {
   }
 
-  openWithTemplate(tpl: TemplateRef<any>) {
-    const configs = new OverlayConfig({
-      hasBackdrop: true,
-      panelClass: ['modal', 'is-active'],
-      backdropClass: 'modal-background'
-    });
-    const overlayRef = this.overlay.create(configs);
-    overlayRef.attach(new TemplatePortal(tpl, this.viewContainerRef));
-    overlayRef.backdropClick().subscribe(() => overlayRef.dispose());
-  }
-
-  onClickBottomDigit(e: MouseEvent, tpl: TemplateRef<any>): void {
+  onClickBottomDigit(e: MouseEvent, overlay: TemplateRef<any>): void {
     e.stopPropagation();
     if (this.overlayService.visible) {
       this.overlayService.hide();
@@ -45,7 +43,12 @@ export class TaleNavigationComponent {
       this.overlayService.show();
     }
 
-    this.openWithTemplate(tpl);
+    this.openWithTemplate(overlay);
+  }
+
+  onSelect(option: Option) {
+    this.route.navigateByUrl(option.url);
+    this.overlayService.hide();
   }
 
   @HostListener("document:click", ['$event'])
@@ -54,5 +57,16 @@ export class TaleNavigationComponent {
     if (this.overlayService.visible) {
       this.overlayService.hide();
     }
+  }
+
+  private openWithTemplate(overlay: TemplateRef<any>) {
+    const configs = new OverlayConfig({
+      hasBackdrop: true,
+      panelClass: ['modal', 'is-active'],
+      backdropClass: 'modal-background'
+    });
+    const overlayRef = this.overlay.create(configs);
+    overlayRef.attach(new TemplatePortal(overlay, this.viewContainerRef));
+    overlayRef.backdropClick().subscribe(() => overlayRef.dispose());
   }
 }

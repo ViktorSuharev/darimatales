@@ -7,15 +7,19 @@
       [style.font-size]="isNavigated || this.overlayService.visible ? '80px' : '60px'"
       (mouseenter)="isNavigated = true"
       (mouseleave)="isNavigated = false"
-      (click)="onClickBottomDigit($event, tpl)">
+      (click)="onClickBottomDigit($event, overlay)">
     {{total}}
   </div>
 </div>
 
-<ng-template #tpl>
+<ng-template #overlay>
   <div class="modal-card">
     <section class="modal-card-body">
-      <app-pic-gallery [isVisible]="this.overlayService.visible"></app-pic-gallery>
+      <app-pic-gallery
+        *ngIf="this.overlayService.visible"
+        [options]="options"
+        (select)="onSelect($event)"
+      ></app-pic-gallery>
     </section>
   </div>
 </ng-template>
