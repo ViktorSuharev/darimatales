@@ -11,6 +11,7 @@ export class WhiteSnakeComponent implements OnInit {
   public readonly title: string = 'ПЕРЕЙТИ К ИСТОРИИ'
 
   public tale: Tale = {
+    id: 0,
     title: '',
     image: '',
     url: '',

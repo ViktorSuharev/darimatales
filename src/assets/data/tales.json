@@ -1,14 +1,17 @@
 [
   {
+    "id": 1,
     "title": "белая змея",
     "url": "/white-snake",
     "image": "url(/assets/images/white-snake.jpg)"},
   {
+    "id": 2,
     "title": "двадцать первый",
     "url": "/twenty-fifth",
     "image": "url(/assets/images/twenty-fifth.jpg)"
   },
   {
+    "id": 3,
     "title": "безымянный ребенок",
     "url": "/nameless-child",
     "image": "url(/assets/images/nameless-child.jpg)"

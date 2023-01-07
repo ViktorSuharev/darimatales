@@ -10,6 +10,7 @@ import {Tale} from '../common/tale.model';
 export class NamelessChildComponent implements OnInit {
   public readonly title: string = 'ПЕРЕЙТИ К ИСТОРИИ'
   public tale: Tale = {
+    id: 0,
     title: '',
     image: '',
     url: '',

@@ -13,10 +13,10 @@ export class TaleNavigationComponent implements OnInit {
   public tales: Tale[] = [];
 
   @Input()
-  currentPage: string = '';
+  currentPage: number = 0;
 
   @Input()
-  total: string = '';
+  total: number = 0;
 
   @Input()
   color: string = '';

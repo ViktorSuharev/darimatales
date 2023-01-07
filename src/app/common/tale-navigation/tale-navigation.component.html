@@ -1,6 +1,6 @@
 <div [style.color]="color">
-  <div class="top-paging-digit">{{currentPage}}</div>
-  <app-progress-bar class="paging-progress-indicator"></app-progress-bar>
+  <div class="top-paging-digit">0{{currentPage}}</div>
+  <app-progress-bar class="paging-progress-indicator" [page]="currentPage"></app-progress-bar>
   <div
       class="bottom-paging-digit"
       [tooltip]="title"
@@ -8,7 +8,7 @@
       (mouseenter)="isNavigated = true"
       (mouseleave)="isNavigated = false"
       (click)="onClickBottomDigit($event, overlay)">
-    {{total}}
+    0{{total}}
   </div>
 </div>
 
