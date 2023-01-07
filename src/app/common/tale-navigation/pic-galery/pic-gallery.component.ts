@@ -1,5 +1,5 @@
 import {Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output} from '@angular/core';
-import {Tale} from '../../../model/tale.model';
+import {Tale} from '../../../tales/common/tale.model';
 
 @Component({
   selector: 'app-pic-gallery',

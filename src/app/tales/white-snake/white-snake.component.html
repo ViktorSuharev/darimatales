@@ -1,8 +1,13 @@
-<div class="bg">
+<div class="bg" [style.background-image]="tale.image">
   <div class="header">
     <app-header></app-header>
-    <div class="body-center-white-frame">
-      <app-front-picture class="left"></app-front-picture>
+  </div>
+  <div class="gradient">
+    <div class="frame">
+      <app-front-picture
+        class="left"
+        [image]="tale.image"
+      ></app-front-picture>
       <app-tale-navigation
         class="right"
         currentPage="01"

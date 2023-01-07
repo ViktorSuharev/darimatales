@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {RoundButtonComponent} from './ui-kit/round-button/round-button.component';
-import {HeaderComponent} from './header/header.component';
+import {HeaderComponent} from './common/header/header.component';
 import {FrontPictureComponent} from './tales/white-snake/front-picture/front-picture.component';
 import {TaleNavigationComponent} from './common/tale-navigation/tale-navigation.component';
 import {ProgressBarComponent} from './common/tale-navigation/progress-bar/progress-bar.component';
@@ -17,6 +17,7 @@ import {BrandIconComponent} from './ui-kit/brand-icon/brand-icon.component';
 import {RoundSelectComponent} from './ui-kit/round-select/round-select.component';
 import {TooltipModule} from './ui-kit/tooltip/tooltip.module';
 import {OverlayModule} from '@angular/cdk/overlay';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,8 +39,9 @@ import {OverlayModule} from '@angular/cdk/overlay';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    OverlayModule,
+    HttpClientModule,
     TooltipModule,
-    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]

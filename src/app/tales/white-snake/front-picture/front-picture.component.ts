@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-front-picture',
@@ -8,4 +8,7 @@ import {Component} from '@angular/core';
 export class FrontPictureComponent {
   title: string = 'ПЕРЕЙТИ К ИСТОРИИ';
   isNavigated: boolean = false;
+
+  @Input()
+  image: string = '';
 }
