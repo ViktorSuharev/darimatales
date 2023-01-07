@@ -6,7 +6,7 @@ import {HeaderComponent} from './header/header.component';
 import {FrontPictureComponent} from './tales/white-snake/front-picture/front-picture.component';
 import {TaleNavigationComponent} from './common/tale-navigation/tale-navigation.component';
 import {ProgressBarComponent} from './common/tale-navigation/progress-bar/progress-bar.component';
-import {ResizeOnNavigateDirective} from './ui-kit/resize-on-hover/resize-on-navigate.directive';
+import {ResizeOnHoverDirective} from './common/tale-navigation/pic-galery/resize-on-hover/resize-on-hover.directive';
 import {PicGalleryComponent} from './common/tale-navigation/pic-galery/pic-gallery.component';
 import {WhiteSnakeComponent} from './tales/white-snake/white-snake.component';
 import {TwentyFifthComponent} from './tales/twenty-fifth/twenty-fifth.component';
@@ -26,7 +26,7 @@ import {OverlayModule} from '@angular/cdk/overlay';
     ProgressBarComponent,
     RoundButtonComponent,
     HeaderComponent,
-    ResizeOnNavigateDirective,
+    ResizeOnHoverDirective,
     PicGalleryComponent,
     WhiteSnakeComponent,
     TwentyFifthComponent,

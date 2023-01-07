@@ -1,7 +1,7 @@
 <div class="picture-gallery" [style.top]="topStyle" [style.left]="leftStyle">
   <ng-container *ngFor="let tale of tales">
     <div
-      resize-on-hover
+      resize-on-hover [widthPx]="widthPx" [heightPx]="heightPx" [factor]="factor"
       class="pic-icon"
       [style.background-image]="tale.image"
       [style.margin-right]="marginStyle"

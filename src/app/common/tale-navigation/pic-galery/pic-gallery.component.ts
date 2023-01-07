@@ -14,21 +14,20 @@ export class PicGalleryComponent implements OnChanges {
   @Output()
   select: EventEmitter<Tale> = new EventEmitter<Tale>();
 
+  widthPx: number = 160;
+  heightPx: number = 100;
+  factor: number = 2;
+  marginPx: number = 30;
+
   topStyle: string = '';
   leftStyle: string = '';
-  marginStyle: string = '';
-
-  private widthPx: number = 80;
-  private heightPx: number = 50;
-  private marginPx: number = 30;
-  private factor: number = 2;
+  marginStyle: string = PicGalleryComponent.px(this.marginPx);
 
   ngOnChanges() {
     const topDiff: number = this.heightPx / 2;
     const leftDiff: number = (this.tales.length * this.widthPx + (this.tales.length - 1) * this.marginPx) / 2;
     this.topStyle = `calc(50% - ${PicGalleryComponent.px(topDiff)})`;
     this.leftStyle = `calc(50% - ${PicGalleryComponent.px(leftDiff)}`;
-    this.marginStyle = PicGalleryComponent.px(this.marginPx);
   }
 
   @HostBinding('style.width') widthStyle: string = PicGalleryComponent.px(this.widthPx);
