@@ -48,7 +48,7 @@ export class ProgressBarComponent implements OnInit {
     console.log('Next id ' + nextId);
     console.log('tales ' + JSON.stringify(tales));
 
-    const nextTale: Tale = tales.filter(t => t.id === nextId)[0];
+    const nextTale: Tale = tales.filter(t => t.order === nextId)[0];
     console.log('Next tale ' + nextTale);
 
     return nextTale;
