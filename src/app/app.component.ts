@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {OverlayService} from './common/overlay.service';
+import {OverlayService} from './ui-kit/overlay/overlay.service';
 
 @Component({
   selector: 'app-root',

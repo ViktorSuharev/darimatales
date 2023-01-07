@@ -1,9 +1,7 @@
 import {Component, HostListener, Input, TemplateRef, ViewContainerRef} from '@angular/core';
-import {OverlayService} from '../overlay.service';
-import {Overlay, OverlayConfig} from '@angular/cdk/overlay';
-import {TemplatePortal} from '@angular/cdk/portal';
 import {Tale} from '../../model/tale.model';
 import {Router} from '@angular/router';
+import {OverlayService} from '../../ui-kit/overlay/overlay.service';
 
 @Component({
   selector: 'app-tale-navigation',
@@ -18,7 +16,7 @@ export class TaleNavigationComponent {
   ];
 
   @Input()
-  current: string = '';
+  currentPage: string = '';
 
   @Input()
   total: string = '';
@@ -30,7 +28,6 @@ export class TaleNavigationComponent {
   isNavigated: boolean = false;
 
   constructor(public readonly overlayService: OverlayService,
-              private readonly overlay: Overlay,
               private readonly route: Router,
               private readonly viewContainerRef: ViewContainerRef) {
   }
@@ -59,14 +56,7 @@ export class TaleNavigationComponent {
     }
   }
 
-  private openWithTemplate(overlay: TemplateRef<any>) {
-    const configs = new OverlayConfig({
-      hasBackdrop: true,
-      panelClass: ['modal', 'is-active'],
-      backdropClass: 'modal-background'
-    });
-    const overlayRef = this.overlay.create(configs);
-    overlayRef.attach(new TemplatePortal(overlay, this.viewContainerRef));
-    overlayRef.backdropClick().subscribe(() => overlayRef.dispose());
+  private openWithTemplate(template: TemplateRef<any>) {
+    this.overlayService.open(template, this.viewContainerRef)
   }
 }
