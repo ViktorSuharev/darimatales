@@ -2,6 +2,8 @@ import {EventEmitter, Injectable} from '@angular/core';
 import {Tale} from '../../tales/common/tale.model';
 import {TaleService} from '../../tales/common/tale.service';
 import {Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+import {CarouselConfig} from './config/carousel-config.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +16,17 @@ export class CarouselService {
   private page: number = 0;
   private isStopped: boolean = false;
 
+  private config: CarouselConfig = {
+    autoUpdate: false
+  };
+
   private tasks: NodeJS.Timer[] = [];
 
-  constructor(private readonly taleService: TaleService,
-              private readonly router: Router) { }
+  constructor(private readonly httpClient: HttpClient,
+              private readonly taleService: TaleService,
+              private readonly router: Router) {
+    this.readConfig();
+  }
 
   public start(page: number, progress: number = 0): EventEmitter<number> {
     this.page = page;
@@ -34,7 +43,9 @@ export class CarouselService {
         if (completedProgress >= CarouselService.DEFAULT_ITERATIONS) {
           this.tasks = this.tasks.filter(t => t !== interval);
           clearInterval(interval);
-          this.openNext(this.page);
+          if (this.config.autoUpdate) {
+            this.openNext(this.page);
+          }
         }
       }
     }, CarouselService.DEFAULT_TIMEOUT_MS);
@@ -50,6 +61,10 @@ export class CarouselService {
   public stop(): void {
     this.isStopped = true;
     this.tasks.forEach(t => clearInterval(t));
+  }
+
+  private readConfig(): void {
+    this.httpClient.get<CarouselConfig>('assets/config/carousel-config.json').subscribe(c => this.config = c);
   }
 
   private openNext(page: number): void {
