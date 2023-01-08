@@ -1,8 +1,9 @@
-import {Component, HostListener, Input, OnInit, TemplateRef, ViewContainerRef} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, OnChanges, OnInit, SimpleChanges, TemplateRef, ViewContainerRef} from '@angular/core';
 import {Tale} from '../../tales/common/tale.model';
 import {Router} from '@angular/router';
 import {OverlayService} from '../../ui-kit/overlay/overlay.service';
 import {TaleService} from '../../tales/common/tale.service';
+import {CarouselService} from '../carousel/carousel.service';
 
 @Component({
   selector: 'app-tale-navigation',
@@ -12,8 +13,17 @@ import {TaleService} from '../../tales/common/tale.service';
 export class TaleNavigationComponent implements OnInit {
   public tales: Tale[] = [];
 
+  public progress: number = 0;
+
+  public _page: number = 0;
+
   @Input()
-  currentPage: number = 0;
+  set page(value: number) {
+    if (value === 0) return;
+    this._page = value;
+    const emitter: EventEmitter<number> = this.carousel.start(value);
+    emitter.subscribe(v => this.progress = v);
+  }
 
   @Input()
   total: number = 0;
@@ -27,7 +37,8 @@ export class TaleNavigationComponent implements OnInit {
   constructor(public readonly overlayService: OverlayService,
               private readonly route: Router,
               private readonly viewContainerRef: ViewContainerRef,
-              private readonly talesService: TaleService) {
+              private readonly talesService: TaleService,
+              private readonly carousel: CarouselService) {
   }
 
   ngOnInit() {
@@ -43,9 +54,11 @@ export class TaleNavigationComponent implements OnInit {
     }
 
     this.openWithTemplate(overlay);
+    this.carousel.pause();
   }
 
   onSelect(tale: Tale) {
+    this.carousel.stop();
     this.route.navigateByUrl(tale.url);
     this.overlayService.hide();
   }
@@ -56,6 +69,8 @@ export class TaleNavigationComponent implements OnInit {
     if (this.overlayService.visible) {
       this.overlayService.hide();
     }
+    const emitter: EventEmitter<number> = this.carousel.start(this._page, this.progress);
+    emitter.subscribe(v => this.progress = v);
   }
 
   private openWithTemplate(template: TemplateRef<any>) {

@@ -1,6 +1,9 @@
 <div [style.color]="color">
-  <div class="top-paging-digit">0{{currentPage}}</div>
-  <app-progress-bar class="paging-progress-indicator" [page]="currentPage"></app-progress-bar>
+  <div class="top-paging-digit">0{{_page}}</div>
+  <app-progress-bar
+    class="paging-progress-indicator"
+    [progress]="progress"
+  ></app-progress-bar>
   <div
       class="bottom-paging-digit"
       [tooltip]="title"
