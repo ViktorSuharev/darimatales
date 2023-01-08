@@ -3,17 +3,17 @@
     "order": 1,
     "title": "белая змея",
     "url": "/white-snake",
-    "image": "url(/assets/images/white-snake.jpg)"},
+    "image": "url(/assets/tales/white-snake/white-snake.jpg)"},
   {
     "order": 2,
     "title": "двадцать первый",
     "url": "/twenty-fifth",
-    "image": "url(/assets/images/twenty-fifth.jpg)"
+    "image": "url(/assets/tales/twenty-fifth/twenty-fifth.jpg)"
   },
   {
     "order": 3,
     "title": "безымянный ребенок",
     "url": "/nameless-child",
-    "image": "url(/assets/images/nameless-child.jpg)"
+    "image": "url(/assets/tales/nameless-child/nameless-child.jpg)"
   }
 ]

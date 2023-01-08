@@ -11,6 +11,6 @@ export class TaleService {
   }
 
   public loadTales(): Observable<Tale[]> {
-    return this.httpClient.get<Tale[]>('assets/data/tales.json');
+    return this.httpClient.get<Tale[]>('assets/tales/tales.json');
   }
 }
