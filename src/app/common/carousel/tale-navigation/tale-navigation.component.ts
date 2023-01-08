@@ -1,9 +1,9 @@
 import {Component, EventEmitter, HostListener, Input, OnChanges, OnInit, SimpleChanges, TemplateRef, ViewContainerRef} from '@angular/core';
-import {Tale} from '../../tales/common/tale.model';
+import {Tale} from '../../../tales/common/tale.model';
 import {Router} from '@angular/router';
-import {OverlayService} from '../../ui-kit/overlay/overlay.service';
-import {TaleService} from '../../tales/common/tale.service';
-import {CarouselService} from '../carousel/carousel.service';
+import {OverlayService} from '../../../ui-kit/overlay/overlay.service';
+import {TaleService} from '../../../tales/common/tale.service';
+import {CarouselService} from '../carousel.service';
 
 @Component({
   selector: 'app-tale-navigation',
