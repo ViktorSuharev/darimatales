@@ -13,13 +13,13 @@ export class CarouselService {
   private static readonly DEFAULT_TIMEOUT_MS: number = 100;
 
   private tales: Tale[] = [];
-  private page: number = 0;
   private isStopped: boolean = false;
 
   private config: CarouselConfig = {
     autoUpdate: false
   };
 
+  private activeTask: NodeJS.Timer | undefined = undefined;
   private tasks: NodeJS.Timer[] = [];
 
   constructor(private readonly httpClient: HttpClient,
@@ -29,22 +29,20 @@ export class CarouselService {
   }
 
   public start(page: number, progress: number = 0): EventEmitter<number> {
-    this.page = page;
     this.isStopped = false;
 
     const emitter: EventEmitter<number> = new EventEmitter<number>();
-    let completedProgress: number = progress;
     const interval = setInterval(() => {
       if (this.isStopped) {
         clearInterval(interval);
       } else {
-        completedProgress++;
-        emitter.emit(completedProgress);
-        if (completedProgress >= CarouselService.DEFAULT_ITERATIONS) {
+        progress++;
+        emitter.emit(progress);
+        if (progress >= CarouselService.DEFAULT_ITERATIONS) {
           this.tasks = this.tasks.filter(t => t !== interval);
           clearInterval(interval);
           if (this.config.autoUpdate) {
-            this.openNext(this.page);
+            this.openNext(page);
           }
         }
       }
@@ -69,28 +67,29 @@ export class CarouselService {
 
   private openNext(page: number): void {
     if (this.tales.length !== 0) {
-      const nextTale: Tale = CarouselService.next(this.tales, page);
-      this.navigate(nextTale);
+      this.navigateNext(this.tales, page);
     } else {
       this.taleService
         .loadTales()
         .subscribe(tales => {
           this.tales = tales;
-          const nextTale: Tale = CarouselService.next(tales, page);
-          this.navigate(nextTale);
+          this.navigateNext(this.tales, page);
       })
     }
   }
 
-  private navigate(tale: Tale): void {
-    this.router.navigateByUrl(tale.url);
+  private navigateNext(tales: Tale[], page: number): void {
+    const nextTale: Tale | undefined = CarouselService.next(tales, page);
+    if (nextTale !== undefined) {
+      this.router.navigateByUrl(nextTale.url);
+    }
   }
 
-  private static next(tales: Tale[], current: number): Tale {
+  private static next(tales: Tale[], current: number): Tale | undefined {
     const count: number = tales.length;
-    const inc: number = 1 + current;
+    const inc: number = current + 1;
     const nextId: number = inc == count ? count : inc % count;
 
-    return tales.filter(t => t.order === nextId)[0];
+    return tales.find(t => t.order === nextId);
   }
 }
