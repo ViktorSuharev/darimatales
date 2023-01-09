@@ -9,15 +9,15 @@ import {CarouselConfig} from './config/carousel-config.model';
   providedIn: 'root'
 })
 export class CarouselService {
-  private static readonly DEFAULT_ITERATIONS: number = 100;
-  private static readonly DEFAULT_TIMEOUT_MS: number = 100;
-
+  private config: CarouselConfig = {
+    autoUpdate: false,
+    iteration: {
+      count: 100,
+      timeoutMs: 100
+    }
+  };
   private tales: Tale[] = [];
   private isStopped: boolean = false;
-
-  private config: CarouselConfig = {
-    autoUpdate: false
-  };
 
   private activeTask: NodeJS.Timer | undefined = undefined;
   private tasks: NodeJS.Timer[] = [];
@@ -28,17 +28,17 @@ export class CarouselService {
     this.readConfig();
   }
 
-  public start(page: number, progress: number = 0): EventEmitter<number> {
+  public start(page: number, initProgress: number = 0): EventEmitter<number> {
     this.isStopped = false;
+    let progress = initProgress;
 
     const emitter: EventEmitter<number> = new EventEmitter<number>();
     const interval = setInterval(() => {
       if (this.isStopped) {
         clearInterval(interval);
       } else {
-        progress++;
-        emitter.emit(progress);
-        if (progress >= CarouselService.DEFAULT_ITERATIONS) {
+        emitter.emit(progress++);
+        if (progress >= this.config.iteration.count) {
           this.tasks = this.tasks.filter(t => t !== interval);
           clearInterval(interval);
           if (this.config.autoUpdate) {
@@ -46,7 +46,7 @@ export class CarouselService {
           }
         }
       }
-    }, CarouselService.DEFAULT_TIMEOUT_MS);
+    }, this.config.iteration.timeoutMs);
     this.tasks.push(interval);
 
     return emitter;
