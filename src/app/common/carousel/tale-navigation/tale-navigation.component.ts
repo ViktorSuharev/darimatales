@@ -1,4 +1,4 @@
-import {Component, EventEmitter, HostListener, Input, OnChanges, OnInit, SimpleChanges, TemplateRef, ViewContainerRef} from '@angular/core';
+import {Component, HostListener, Input, OnInit, TemplateRef, ViewContainerRef} from '@angular/core';
 import {Tale} from '../../../tales/common/tale.model';
 import {Router} from '@angular/router';
 import {OverlayService} from '../../../ui-kit/overlay/overlay.service';
@@ -21,8 +21,9 @@ export class TaleNavigationComponent implements OnInit {
   set page(value: number) {
     if (value === 0) return;
     this._page = value;
-    const emitter: EventEmitter<number> = this.carousel.start(value);
-    emitter.subscribe(v => this.progress = v);
+    this.carousel
+      .start(value)
+      .subscribe(v => this.progress = v);
   }
 
   @Input()
@@ -69,8 +70,9 @@ export class TaleNavigationComponent implements OnInit {
     if (this.overlayService.visible) {
       this.overlayService.hide();
     }
-    const emitter: EventEmitter<number> = this.carousel.start(this._page, this.progress);
-    emitter.subscribe(v => this.progress = v);
+    this.carousel
+      .start(this._page, this.progress)
+      .subscribe(v => this.progress = v);
   }
 
   private openWithTemplate(template: TemplateRef<any>) {

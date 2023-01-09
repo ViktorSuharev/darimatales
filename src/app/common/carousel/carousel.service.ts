@@ -30,10 +30,18 @@ export class CarouselService {
 
   public start(page: number, initProgress: number = 0): EventEmitter<number> {
     this.isStopped = false;
-    let progress = initProgress;
 
     const emitter: EventEmitter<number> = new EventEmitter<number>();
-    const interval = setInterval(() => {
+    const interval = this.createInterval(page, initProgress, emitter);
+    this.tasks.push(interval);
+
+    return emitter;
+  }
+
+  private createInterval(page: number, initProgress: number, emitter: EventEmitter<number>): NodeJS.Timer {
+    let progress = initProgress;
+
+    const interval: NodeJS.Timer = setInterval(() => {
       if (this.isStopped) {
         clearInterval(interval);
       } else {
@@ -47,9 +55,8 @@ export class CarouselService {
         }
       }
     }, this.config.iteration.timeoutMs);
-    this.tasks.push(interval);
 
-    return emitter;
+    return interval;
   }
 
   public pause(): void {
