@@ -6,8 +6,7 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./front-picture.component.less']
 })
 export class FrontPictureComponent {
-  title: string = 'ПЕРЕЙТИ К ИСТОРИИ';
-  isNavigated: boolean = false;
+  isHovered: boolean = false;
 
   @Input()
   image: string = '';

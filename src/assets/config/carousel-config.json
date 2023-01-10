@@ -1,5 +1,5 @@
 {
-  "autoUpdate": true,
+  "autoUpdate": false,
   "iteration": {
     "count": 100,
     "timeoutMs": 100
