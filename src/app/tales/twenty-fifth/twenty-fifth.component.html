@@ -5,12 +5,14 @@
   <div class="body" [style.background-image]="tale.image">
     <div class="container">
       <div class="left"></div>
-      <app-tale-navigation
-        class="right"
-        color="white"
-        [page]=tale.order
-        [total]=3
-      ></app-tale-navigation>
+      <div class="right">
+        <app-tale-navigation
+          class="navigator"
+          color="white"
+          [page]=tale.order
+          [total]=3
+        ></app-tale-navigation>
+      </div>
     </div>
   </div>
 </div>
