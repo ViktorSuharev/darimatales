@@ -3,9 +3,9 @@
     <app-header></app-header>
   </div>
   <div class="container">
-    <div class="body" [tooltip]="title">{{ tale.title }}</div>
+    <div class="right" [tooltip]="title">{{ tale.title }}</div>
     <app-tale-navigation
-      class="nav-ctrl"
+      class="left"
       [page]=tale.order
       [total]=3
       color="white"

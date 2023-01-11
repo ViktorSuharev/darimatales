@@ -7,15 +7,15 @@
 }
 
 .container {
-  display: grid;
-  height: calc(100% - 20% - 2 * 2% - 8%);
-  grid-template-columns: 4fr 2fr;
+  top: 50%;
+  height: 100%;
+  width: 100%;
 }
 
-.body {
+.right {
   border: 2px solid rgba(255, 255, 255, 0.4);
-  width: 28%;
-  height: 100%;
+  width: 30%;
+  height: 50%;
   margin-left: 12%;
 
   color: white;
@@ -28,7 +28,7 @@
   text-transform: uppercase;
   text-align: center;
 
-  display: flex;
+  float: left;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -40,8 +40,8 @@
   }
 }
 
-.nav-ctrl {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.left {
+  height: 100%;
+  width: 30%;
+  float: left;
 }

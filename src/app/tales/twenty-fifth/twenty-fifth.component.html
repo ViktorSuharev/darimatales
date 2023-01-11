@@ -1,16 +1,16 @@
 <div class="bg">
   <div class="header">
     <app-header></app-header>
-    <div class="body" [style.background-image]="tale.image">
-      <div class="container">
-        <div class="left-column"></div>
-        <app-tale-navigation
-          class="nav-ctrl"
-          [page]=tale.order
-          [total]=3
-          color="white"
-        ></app-tale-navigation>
-      </div>
+  </div>
+  <div class="body" [style.background-image]="tale.image">
+    <div class="container">
+      <div class="left"></div>
+      <app-tale-navigation
+        class="right"
+        color="white"
+        [page]=tale.order
+        [total]=3
+      ></app-tale-navigation>
     </div>
   </div>
 </div>
