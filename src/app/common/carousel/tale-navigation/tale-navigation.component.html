@@ -1,11 +1,11 @@
 <div [style.color]="color">
-  <div class="top-paging-digit">0{{_page}}</div>
+  <div class="top-paging-digit digit">0{{_page}}</div>
   <app-progress-bar
     class="paging-progress-indicator"
     [progress]="progress"
   ></app-progress-bar>
   <div
-      class="bottom-paging-digit"
+      class="bottom-paging-digit digit"
       [tooltip]="title"
       [style.font-size]="isNavigated || this.overlayService.visible ? '80px' : '60px'"
       (mouseenter)="isNavigated = true"

@@ -3,12 +3,14 @@
     <app-header></app-header>
   </div>
   <div class="container">
-    <div class="right" [tooltip]="title">{{ tale.title }}</div>
-    <app-tale-navigation
-      class="left"
-      [page]=tale.order
-      [total]=3
-      color="white"
-    ></app-tale-navigation>
+    <div class="left" [tooltip]="title">{{ tale.title }}</div>
+    <div class="right">
+      <app-tale-navigation
+        class="navigator"
+        [page]=tale.order
+        [total]=3
+        color="white"
+      ></app-tale-navigation>
+    </div>
   </div>
 </div>
