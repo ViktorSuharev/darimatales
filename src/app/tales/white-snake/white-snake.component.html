@@ -8,12 +8,14 @@
         class="left"
         [image]="tale.image"
       ></app-front-picture>
-      <app-tale-navigation
-        class="right"
-        color="#38241A"
-        [page]=tale.order
-        [total]=3
-      ></app-tale-navigation>
+      <div class="right">
+        <app-tale-navigation
+          class="navigator"
+          color="#38241A"
+          [page]=tale.order
+          [total]=3
+        ></app-tale-navigation>
+      </div>
     </div>
   </div>
 </div>
