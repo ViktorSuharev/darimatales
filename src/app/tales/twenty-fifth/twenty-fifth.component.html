@@ -18,12 +18,11 @@
 </div>
 
 <div class="front">
-  <app-rhombus></app-rhombus>
+<!--  <app-rhombus></app-rhombus>-->
+  <div style="width: 100%; height: 100%; position: absolute"
+       [innerHTML]="svgInnerImage | noSanitize"
+  ></div>
+  <div style="width: 100%; height: 100%"
+       [innerHTML]="svgImage | noSanitize"
+  ></div>
 </div>
-
-<!--   <div style="width: 100%; height: 100%; position: absolute"-->
-<!--       [innerHTML]="svgInnerImage | noSanitize"-->
-<!--  ></div>-->
-<!--  <div style="width: 100%; height: 100%"-->
-<!--       [innerHTML]="svgImage | noSanitize"-->
-<!--  ></div> -->
