@@ -33,7 +33,7 @@ export class TwentyFifthComponent implements OnInit, OnDestroy {
     const fullWidth = window.innerWidth;
     const fullHeight = window.innerHeight;
 
-    const squareLength = Math.floor(fullHeight / Math.sqrt(2));
+    const squareLength = Math.floor((fullHeight - 100) / Math.sqrt(2));
     const rotationPointX = Math.floor(fullWidth / 2);
     const rotationPointY = Math.floor(fullHeight / 2);
     const startPointX = Math.floor(rotationPointX - squareLength / 2);
@@ -59,11 +59,10 @@ export class TwentyFifthComponent implements OnInit, OnDestroy {
       '      <stop offset="100%" style="stop-color: #906; stop-opacity: 0.10"/>\n' +
       '    </linearGradient>\n' +
       '  </defs>' +
-      '    <rect x="' + startPointX * Math.sqrt(1.4) + '" y="' + startPointY * Math.sqrt(2) +
-             '" height="' + squareLength / Math.sqrt(1.5) + '" width="' + squareLength / Math.sqrt(1.5) + '"\n' +
-      '         style="fill: url(#three_opacity_stops);"\n' +
-      '         transform="rotate(45 ' + rotationPointX + ' ' + rotationPointY + ')"\n' +
-      '    ></rect>\n' +
+      '      <rect x="' + (startPointX + 100) + '" y="' + (startPointY + 100) + '" height="' + (squareLength - 200) + '" width="' + (squareLength - 200) + '"\n' +
+      '            style="fill: url(#three_opacity_stops);"\n' +
+      '            transform="rotate(45 ' + rotationPointX + ' ' + rotationPointY + ')"\n' +
+      '      ></rect>\n' +
       '  </svg>\n' +
       '</div>';
   }
