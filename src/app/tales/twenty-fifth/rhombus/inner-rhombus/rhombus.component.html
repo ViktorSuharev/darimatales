@@ -6,8 +6,11 @@
       <stop offset="100%" style="stop-color: #906; stop-opacity: 0.10"/>
     </linearGradient>
   </defs>
-  <rect x="' + (startPointX + 100) + '" y="' + (startPointY + 100) + '" height="' + (squareLength - 200) + '" width="' + (squareLength - 200) + '"
+  <rect [attr.x]="startPointX + 100"
+        [attr.y]="startPointY + 100"
+        [attr.height]="squareLength - 200"
+        [attr.width]="squareLength - 200"
         style="fill: url(#three_opacity_stops);"
-        transform="rotate(45 ' + rotationPointX + ' ' + rotationPointY + ')"
+        [attr.transform]="'rotate(45 ' + rotationPointX + ' ' + rotationPointY + ')'"
   ></rect>
 </svg>

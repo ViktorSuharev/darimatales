@@ -9,7 +9,6 @@ import {TaleService} from '../common/tale.service';
 })
 export class TwentyFifthComponent implements OnInit, OnDestroy {
   svgImage: string;
-  svgInnerImage: string;
 
   public tale: Tale = {
     order: 0,
@@ -40,30 +39,11 @@ export class TwentyFifthComponent implements OnInit, OnDestroy {
     const startPointY = Math.floor(rotationPointY - squareLength / 2);
 
     this.svgImage = '' +
-      '<div style="width: 100%; height: 100%">\n' +
-      '    <svg style="width: 100%; height: 100%">\n' +
-      '      <rect x="' + startPointX + '" y="' + startPointY + '" height="' + squareLength + '" width="' + squareLength + '"\n' +
-      '            style="stroke:white; fill: transparent"\n' +
-      '            transform="rotate(45 ' + rotationPointX + ' ' + rotationPointY + ')"\n' +
-      '      ></rect>\n' +
-      '    </svg>\n' +
-      '  </div>';
-
-    this.svgInnerImage = '' +
-      '<div style="width: 100%; height: 100%">\n' +
-      '  <svg style="width: 100%; height: 100%">\n' +
-      '  <defs>\n' +
-      '    <linearGradient id="three_opacity_stops">\n' +
-      '      <stop offset="0%" style="stop-color: #906; stop-opacity: 1.0"/>\n' +
-      '      <stop offset="50%" style="stop-color: #906; stop-opacity: 0.3"/>\n' +
-      '      <stop offset="100%" style="stop-color: #906; stop-opacity: 0.10"/>\n' +
-      '    </linearGradient>\n' +
-      '  </defs>' +
-      '      <rect x="' + (startPointX + 100) + '" y="' + (startPointY + 100) + '" height="' + (squareLength - 200) + '" width="' + (squareLength - 200) + '"\n' +
-      '            style="fill: url(#three_opacity_stops);"\n' +
-      '            transform="rotate(45 ' + rotationPointX + ' ' + rotationPointY + ')"\n' +
-      '      ></rect>\n' +
-      '  </svg>\n' +
-      '</div>';
+      '<svg style="width: 100%; height: 100%">\n' +
+      '  <rect x="' + startPointX + '" y="' + startPointY + '" height="' + squareLength + '" width="' + squareLength + '"\n' +
+      '      style="stroke:white; fill: transparent"\n' +
+      '      transform="rotate(45 ' + rotationPointX + ' ' + rotationPointY + ')"\n' +
+      '  ></rect>\n' +
+      '</svg>';
   }
 }
