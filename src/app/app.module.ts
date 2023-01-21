@@ -18,7 +18,7 @@ import {RoundSelectComponent} from './ui-kit/round-select/round-select.component
 import {TooltipModule} from './ui-kit/tooltip/tooltip.module';
 import {OverlayModule} from '@angular/cdk/overlay';
 import {HttpClientModule} from '@angular/common/http';
-import {RhombusComponent} from './tales/twenty-fifth/front-picture/rhombus.component';
+import {RhombusComponent} from './tales/twenty-fifth/rhombus/rhombus.component';
 
 @NgModule({
   declarations: [
