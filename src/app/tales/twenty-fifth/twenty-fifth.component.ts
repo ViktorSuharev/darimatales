@@ -8,7 +8,6 @@ import {TaleService} from '../common/tale.service';
   styleUrls: ['./twenty-fifth.component.less']
 })
 export class TwentyFifthComponent implements OnInit, OnDestroy {
-  svgImage: string;
 
   public tale: Tale = {
     order: 0,
@@ -28,22 +27,5 @@ export class TwentyFifthComponent implements OnInit, OnDestroy {
     console.log('TwentyFifthComponent was destroyed at ' + new Date());
   }
 
-  constructor(private readonly taleService: TaleService) {
-    const fullWidth = window.innerWidth;
-    const fullHeight = window.innerHeight;
-
-    const squareLength = Math.floor((fullHeight - 100) / Math.sqrt(2));
-    const rotationPointX = Math.floor(fullWidth / 2);
-    const rotationPointY = Math.floor(fullHeight / 2);
-    const startPointX = Math.floor(rotationPointX - squareLength / 2);
-    const startPointY = Math.floor(rotationPointY - squareLength / 2);
-
-    this.svgImage = '' +
-      '<svg style="width: 100%; height: 100%">\n' +
-      '  <rect x="' + startPointX + '" y="' + startPointY + '" height="' + squareLength + '" width="' + squareLength + '"\n' +
-      '      style="stroke:white; fill: transparent"\n' +
-      '      transform="rotate(45 ' + rotationPointX + ' ' + rotationPointY + ')"\n' +
-      '  ></rect>\n' +
-      '</svg>';
-  }
+  constructor(private readonly taleService: TaleService) {}
 }
