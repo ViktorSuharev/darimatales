@@ -1,1 +1,9 @@
-<p>outer-rhombus works!</p>
+<svg style="width: 100%; height: 100%">
+  <rect [attr.x]="startPointX"
+        [attr.y]="startPointY"
+        [attr.height]="squareLength"
+        [attr.width]="squareLength"
+        style="stroke:white; fill: transparent"
+        [attr.transform]="'rotate(45 ' + rotationPointX + ' ' + rotationPointY + ')'"
+  ></rect>
+</svg>

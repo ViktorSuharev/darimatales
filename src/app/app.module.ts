@@ -18,7 +18,7 @@ import {RoundSelectComponent} from './ui-kit/round-select/round-select.component
 import {TooltipModule} from './ui-kit/tooltip/tooltip.module';
 import {OverlayModule} from '@angular/cdk/overlay';
 import {HttpClientModule} from '@angular/common/http';
-import {RhombusComponent} from './tales/twenty-fifth/rhombus/inner-rhombus/rhombus.component';
+import {InnerRhombusComponent} from './tales/twenty-fifth/rhombus/inner-rhombus/inner-rhombus.component';
 import { OuterRhombusComponent } from './tales/twenty-fifth/rhombus/outer-rhombus/outer-rhombus.component';
 
 @NgModule({
@@ -37,7 +37,7 @@ import { OuterRhombusComponent } from './tales/twenty-fifth/rhombus/outer-rhombu
     NoSanitizePipe,
     BrandIconComponent,
     RoundSelectComponent,
-    RhombusComponent,
+    InnerRhombusComponent,
     OuterRhombusComponent
   ],
   imports: [

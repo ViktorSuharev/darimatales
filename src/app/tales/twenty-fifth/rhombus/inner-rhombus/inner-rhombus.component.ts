@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-rhombus',
-  templateUrl: './rhombus.component.html',
-  styleUrls: ['./rhombus.component.less']
+  selector: 'app-inner-rhombus',
+  templateUrl: './inner-rhombus.component.html',
+  styleUrls: ['./inner-rhombus.component.less']
 })
-export class RhombusComponent {
+export class InnerRhombusComponent {
   fullWidth = window.innerWidth;
   fullHeight = window.innerHeight;
 
