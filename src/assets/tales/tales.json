@@ -8,7 +8,7 @@
     "order": 2,
     "title": "двадцать первый",
     "url": "/twenty-fifth",
-    "image": "url(/assets/tales/twenty-fifth/twenty-fifth.jpg)"
+    "image": "url(/assets/icons/rhombus.svg), url(/assets/tales/twenty-fifth/twenty-fifth.jpg)"
   },
   {
     "order": 3,
